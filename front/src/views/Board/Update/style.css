@@ -1,4 +1,4 @@
-#board-write-wrapper {
+#board-update-wrapper {
     border-top: 1px solid rgba(0,0,0,0.2);
 
     display: flex;
@@ -8,7 +8,7 @@
 
 }
 
-.board-write-container {
+.board-update-container {
     padding: 100px 24px;
     width: 996px;
     min-height: 1052px;
@@ -16,17 +16,17 @@
     background-color: white;
 }
 
-.board-write-box {
+.board-update-box {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
 
-.board-write-title-box {
+.board-update-title-box {
     width: 100%;
 }
 
-.board-write-title-input {
+.board-update-title-input {
     width: 100%;
 
     border: none;
@@ -40,14 +40,14 @@
     line-height: 140%;
 }
 
-.board-write-content-box {
+.board-update-content-box {
     width: 100%;
 
     display: flex;
     gap: 16px;
 }
 
-.board-write-content-textarea {
+.board-update-content-textarea {
     flex: 1;
 
     border: none;
@@ -61,7 +61,7 @@
     line-height: 160%;
 }
 
-.board-write-images-box {
+.board-update-images-box {
     width: 100%;
 
     display: flex;
@@ -69,12 +69,12 @@
     gap: 20px;
 }
 
-.board-write-image-box {
+.board-update-image-box {
     width: 100%;
     position: relative;
 }
 
-.board-write-image {
+.board-update-image {
     width: 100%;
 }
 

@@ -1,4 +1,5 @@
 import PostBoardResponseDto from "./post-board.response.dto";
+import PatchBoardResponseDto from "./patch-board.response.dto";
 import IncreaseViewCountResponseDto from "./increase-view-count.response.dto";
 import GetBoardResponseDto from "./get-board.response.dto";
 import GetFavoriteListResponseDto from "./get-favorite-list.response.dto";
@@ -15,5 +16,6 @@ export type {
     IncreaseViewCountResponseDto,
     PostBoardResponseDto,
     PostCommentResponseDto,
-    PutFavoriteResponseDto
+    PutFavoriteResponseDto,
+    PatchBoardResponseDto,
 }

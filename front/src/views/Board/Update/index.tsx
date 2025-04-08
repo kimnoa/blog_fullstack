@@ -1,12 +1,17 @@
 import React, {ChangeEvent, useEffect, useRef, useState} from "react";
 import "./style.css";
 import {useBoardStore, useLoginUserStore} from "../../../stores";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import {MAIN_PATH} from "../../../constant";
 import {useCookies} from "react-cookie";
+import { getBoardRequest } from "apis";
+import { GetBoardResponseDto } from "apis/response/board";
+import { ResponseDto } from "apis/response";
+import { log } from "console";
+import { convertUrlsToFile } from "utils/convertUrlsToFile";
 
 // component:게시물 수정 화면 컴포넌트
-export default function BoardWrite() {
+export default function BoardUpdate() {
 
     // state: 본문 영역 요소 참조 상태
     const titleRef = useRef<HTMLInputElement | null>(null);
@@ -14,12 +19,14 @@ export default function BoardWrite() {
     const contentRef = useRef<HTMLTextAreaElement | null>(null);
     // state: 파일 입력 요소 참조 상태
     const imageInputRef = useRef<HTMLInputElement | null>(null);
+
+   // state: 게시물 번호 path variable 상태
+    const {boardNumber} = useParams();
+
     // state:게시물 상태
     const {title, setTitle} = useBoardStore();
     const {content, setContent} = useBoardStore();
     const {boardImageFileList, setBoardImageFileList} = useBoardStore();
-    const {resetBoard} = useBoardStore();
-
     // state: cookie 상태
     const [cookies, setCookie] = useCookies();
 
@@ -30,7 +37,37 @@ export default function BoardWrite() {
     const [imageUrls,setImageUrls] = useState<string[]>([]);
 
     // function: 네비게이트 함수
-    const navigator = useNavigate();
+    const navigate = useNavigate();
+
+    // function: getBoardResponse 함수
+    const getBoardResponse = (responseBody: GetBoardResponseDto | ResponseDto | null) => {
+        if (!responseBody) return;
+        const {code} = responseBody;
+        if(code === 'NB') alert("존재하지 않는 게시물입니다.");
+        if(code === 'DBE') alert("데이터베이스 오류입니다.");
+        if(code !== 'SU') {
+            alert("게시물 조회에 실패했습니다.");
+            navigate(MAIN_PATH());
+            return;
+        }
+        
+        const {title, content, boardImageList, email} = responseBody as GetBoardResponseDto;
+        setTitle(title);
+        setContent(content);
+        setImageUrls(boardImageList);
+        convertUrlsToFile(boardImageList)
+        .then(boardImageFileList => setBoardImageFileList(boardImageFileList));
+
+        if (!loginUser || loginUser.email !== email){
+            alert("게시물 수정 권한이 없습니다.");
+            navigate(MAIN_PATH());
+            return;
+        }
+        if (!contentRef.current) return;
+        contentRef.current.style.height = 'auto';
+        contentRef.current.style.height = `${contentRef.current.scrollHeight}px`;
+
+    }
 
     // event handler: 제목 변경 이벤트 처리
 
@@ -92,13 +129,13 @@ export default function BoardWrite() {
     useEffect(() => {
         const accessToken = cookies.accessToken;
         if (!accessToken ) { // 비로그인 시, 메인 화면으로 이동
-            navigator(MAIN_PATH());
+            navigate(MAIN_PATH());
             console.log(loginUser);
             return;
         };
-        resetBoard();
-        console.log(loginUser);
-    },[]);
+        if (!boardNumber) return;
+        getBoardRequest(boardNumber).then(getBoardResponse);
+    },[boardNumber]);
 
     // render:게시물 작성 화면 컴포넌트 랜더링
     return (

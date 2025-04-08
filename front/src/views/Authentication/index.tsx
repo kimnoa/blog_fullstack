@@ -24,7 +24,7 @@ export default function Authentication() {
     const {loginUser, setLoginUser} = useLoginUserStore();
 
     // function: 네비게이트 함수
-    const navigator = useNavigate();
+    const navigate = useNavigate();
 
     // component: sign in card 컴포넌트
     const SignInCard = () => {
@@ -70,7 +70,7 @@ export default function Authentication() {
             if (!token) return;
 
             setCookie('accessToken', token, {expires: expires, path: MAIN_PATH()});
-            navigator(MAIN_PATH());
+            navigate(MAIN_PATH());
         }
 
         // event handler: 이메일 변경 이벤트 처리

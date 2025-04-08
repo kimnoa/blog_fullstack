@@ -30,7 +30,7 @@ export default function BoardWrite() {
     const [imageUrls,setImageUrls] = useState<string[]>([]);
 
     // function: 네비게이트 함수
-    const navigator = useNavigate();
+    const navigate = useNavigate();
 
     // event handler: 제목 변경 이벤트 처리
 
@@ -92,7 +92,7 @@ export default function BoardWrite() {
     useEffect(() => {
         const accessToken = cookies.accessToken;
         if (!accessToken ) { // 비로그인 시, 메인 화면으로 이동
-            navigator(MAIN_PATH());
+            navigate(MAIN_PATH());
             console.log(loginUser);
             return;
         };
