@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-const usePagination = <T>() => {
+const usePagination = <T>(countPerPage: number) => {
     // state: 전체 객체 리스트 상태 (호출하는 위치에서 state 결정 - 댓글, 게시물 등등)
     const [totalList, setTotalList] = useState<T[]>([]);
     // state: 보여줄 객체 리스트 상태
@@ -20,8 +20,8 @@ const usePagination = <T>() => {
 
     // function: 보여줄 객체 리스트 추출 함수
     const setView = () => {
-        const start_index = (currentPage - 1) * 10;
-        const end_index = start_index + 10 > totalList.length ? totalList.length : start_index + 10;
+        const start_index = (currentPage - 1) * countPerPage;
+        const end_index = start_index + countPerPage > totalList.length ? totalList.length : start_index + countPerPage;
         const viewList = totalList.slice(start_index,end_index);
         setViewList(viewList);
     };
@@ -37,7 +37,7 @@ const usePagination = <T>() => {
     // effect: total list가 변경될 때마다 진행 작업
     useEffect(() => {
 
-        const totalPage = Math.ceil(totalList.length / 10);
+        const totalPage = Math.ceil(totalList.length / countPerPage);
         const totalPageList: number[] = [];
         for (let page = 1; page <= totalPage; page++) {
             totalPageList.push(page);

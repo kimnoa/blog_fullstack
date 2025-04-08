@@ -154,6 +154,13 @@
     background-image: url('assets/image/eye_image.png');
 }
 
+.expand-left-icon{
+    background-image: url('assets/image/expand-left.png');
+}
+.expand-right-icon{
+    background-image: url('assets/image/expand-right.png');
+}
+
 .expand-left-light-icon{
     background-image: url('assets/image/expand-left-light.png');
 }

@@ -31,6 +31,7 @@ import {
 import dayjs from "dayjs";
 import {useCookies} from "react-cookie";
 import {PostCommentRequestDto} from "../../../apis/request/board";
+import { usePagination } from "hooks";
 
 // component: 게시물 상세 화면 컴포넌트
 export default function BoardDetail() {
@@ -183,6 +184,18 @@ export default function BoardDetail() {
 
         // state: 댓글 textarea 참조 상태
         const commentRef = useRef<HTMLTextAreaElement | null>(null);
+        // state: pagination 관련 상태
+        const {
+            viewList,
+        currentPage,
+        setCurrentPage,
+        viewPageList,
+        currentSection,
+        setCurrentSection,
+        totalSection,
+        setTotalList,
+        } = usePagination<CommentListItem>(3);
+
         // state: favoriteList 상태
         const [favoriteList, setFavoriteList] = useState<FavoriteListItem[]>([]);
         // state: commentList 상태
@@ -195,6 +208,8 @@ export default function BoardDetail() {
         const [showComment, setShowComment] = useState<boolean>(false);
         // state: 댓글 상태
         const [comment, setComment] = useState<string>('');
+        // state: 전체 댓글 개수 상태
+        const [totalCommentCount, setTotalCommentCount] = useState<number>(0); 
 
         // function: get favorist list response 처리 함수
         const getFavoriteListResponse = (responseBody: GetFavoriteListResponseDto|ResponseDto|null) => {
@@ -227,6 +242,8 @@ export default function BoardDetail() {
 
             const {commentList} = responseBody as GetCommentListResponseDto;
             setCommentList(commentList);
+            setTotalList(commentList);
+            setTotalCommentCount(commentList.length);
         }
 
         // function: put favorite response 처리 함수
@@ -340,14 +357,21 @@ export default function BoardDetail() {
                 {showComment && <div className='board-detail-bottom-comment-box'>
                     <div className='board-detail-bottom-comment-container'>
                         <div className='board-detail-bottom-comment-title'>{'댓글'}<span
-                            className='emphasis'>{commentList.length}</span></div>
+                            className='emphasis'>{viewList.length}</span></div>
                         <div className='board-detail-bottom-comment-list-container'>
-                            {commentList.map(item => <CommentItem commentListItem={item}/>)}
+                            {viewList.map(item => <CommentItem commentListItem={item}/>)}
                         </div>
                     </div>
                     <div className='divider'></div>
                     <div className='board-detail-bottom-comment-pagination-box'>
-                        <Pagination/>
+                        <Pagination
+                            currentPage={currentPage}
+                            currentSection={currentSection}
+                            setCurrentPage={setCurrentPage}
+                            setCurrentSection={setCurrentSection}
+                            viewPageList={viewPageList}
+                            totalSection={totalSection}
+                        />
                     </div>
                     <div className='board-detail-bottom-comment-input-box'>
                         {loginUser !== null &&
