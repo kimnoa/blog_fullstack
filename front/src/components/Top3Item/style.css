@@ -1,0 +1,102 @@
+.top3-list-item {
+    border-radius: 10px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column-reverse;
+    width: calc(384px - 24px - 24px);
+    height: calc(508px - 24px - 24px);
+
+    background-color: rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-size: cover;
+
+    cursor: pointer;
+}
+
+.top3-list-item:hover {
+    opacity: 0.9;
+}
+
+.top3-list-item-main-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.top3-list-item-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top3-list-item-profile-box {
+    width: 32px;
+    height: 32px;
+}
+
+.top3-list-item-profile-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+.top3-list-item-write-box {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.top3-list-item-write-nickname {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.top3-list-item-write-datetime {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 140%;
+    color: white;
+}
+
+.top3-list-item-middle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.top3-list-item-title {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    line-height: 140%;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.top3-list-item-content {
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+    line-height: 140%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    color: white;
+}
+
+.top3-list-item-bottom {
+
+}
+
+.top3-list-item-counts {
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+    line-height: 140%;
+}
