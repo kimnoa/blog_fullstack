@@ -20,7 +20,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -101,6 +105,25 @@ public class BoardServiceImplement implements BoardService {
         }
         return GetLatestBoardListResponseDto.success(boardListViewEntities);
     }
+    @Override
+    public ResponseEntity<? super GetTop3BoardListResponseDto> getTop3BoardList() {
+        List<BoardListViewEntity> boardListViewEntities = new ArrayList<>();
+
+        try {
+            // 7일 전 날짜 구하기
+            Date beforeWeek = Date.from(Instant.now().minus(7, ChronoUnit.DAYS));
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String formattedDate = dateFormat.format(beforeWeek);
+            
+            boardListViewEntities = boardListViewRepository.findTop3ByWriteDatetimeGreaterThanOrderByFavoriteCountDescViewCountDescCommentCountDescWriteDatetimeDesc(formattedDate);
+
+        } catch (Exception exception){
+            log.error(exception.getMessage());
+            return ResponseDto.databaseError();
+        }
+        return GetTop3BoardListResponseDto.success(boardListViewEntities);
+    }
+    
     @Override
     public ResponseEntity<? super PostBoardResponseDto> postBoard(PostBoardRequestDto dto, String email) {
 
