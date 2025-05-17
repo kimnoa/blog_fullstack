@@ -10,6 +10,7 @@ import com.timeblock.myblog.entity.BoardListViewEntity;
 import com.timeblock.myblog.entity.CommentEntity;
 import com.timeblock.myblog.entity.FavoriteEntity;
 import com.timeblock.myblog.entity.ImageEntity;
+import com.timeblock.myblog.entity.SearchLogEntity;
 import com.timeblock.myblog.repository.*;
 import com.timeblock.myblog.repository.resultSet.GetBoardResultSet;
 import com.timeblock.myblog.repository.resultSet.GetCommentListResultSet;
@@ -20,7 +21,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -34,6 +39,7 @@ public class BoardServiceImplement implements BoardService {
     private final CommentRepository commentRepository;
     private final FavoriteRepository favoriteRepository;
     private final BoardListViewRepository boardListViewRepository;
+    private final SearchLogRepository searchLogRepository;
 
     @Override
     public ResponseEntity<? super GetBoardResponseDto> getBoard(int boardNumber) {
@@ -101,6 +107,49 @@ public class BoardServiceImplement implements BoardService {
         }
         return GetLatestBoardListResponseDto.success(boardListViewEntities);
     }
+    @Override
+    public ResponseEntity<? super GetTop3BoardListResponseDto> getTop3BoardList() {
+        List<BoardListViewEntity> boardListViewEntities = new ArrayList<>();
+
+        try {
+            // 7일 전 날짜 구하기
+            Date beforeWeek = Date.from(Instant.now().minus(7, ChronoUnit.DAYS));
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String formattedDate = dateFormat.format(beforeWeek);
+            
+            boardListViewEntities = boardListViewRepository.findTop3ByWriteDatetimeGreaterThanOrderByFavoriteCountDescViewCountDescCommentCountDescWriteDatetimeDesc(formattedDate);
+
+        } catch (Exception exception){
+            log.error(exception.getMessage());
+            return ResponseDto.databaseError();
+        }
+        return GetTop3BoardListResponseDto.success(boardListViewEntities);
+    }
+ 
+    @Override
+    public ResponseEntity<? super GetSearchBoardListResponseDto> getSearchBoardList(String searchWord, String preSearchWord) {
+        List<BoardListViewEntity> boardListViewEntities = new ArrayList<>();
+
+        try {
+            if(searchWord.equals(preSearchWord)) return GetSearchBoardListResponseDto.success(boardListViewEntities);
+            boardListViewEntities = boardListViewRepository.findByTitleContainsOrContentContainsOrderByWriteDatetimeDesc(searchWord, searchWord);
+
+            SearchLogEntity searchLogEntity = new SearchLogEntity(searchWord, preSearchWord, false);
+            searchLogRepository.save(searchLogEntity);
+            
+            boolean relation = preSearchWord !=null;
+            if(relation) {
+                SearchLogEntity relationSearchLogEntity = new SearchLogEntity(preSearchWord, searchWord, true);
+                searchLogRepository.save(relationSearchLogEntity);
+            }
+
+        } catch (Exception exception){
+            log.error(exception.getMessage());
+            return ResponseDto.databaseError();
+        }
+        return GetSearchBoardListResponseDto.success(boardListViewEntities);
+    }
+
     @Override
     public ResponseEntity<? super PostBoardResponseDto> postBoard(PostBoardRequestDto dto, String email) {
 

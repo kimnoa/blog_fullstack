@@ -44,7 +44,7 @@ export default function BoardDetail() {
     const [cookies, setCookies] = useCookies();
 
     // function: 네비게이트 함수
-    const navigator = useNavigate();
+    const navigate = useNavigate();
     // function: increase view count response 처리 함수
     const increaseViewCountResponse = (responseBody: IncreaseViewCountResponseDto | ResponseDto | null) => {
         if(!responseBody) return;
@@ -76,7 +76,7 @@ export default function BoardDetail() {
             if (code === 'NB') alert('존재하지 않는 게시물입니다.');
             if (code === 'DBE') alert('데이터베이스 오류입니다.');
             if (code !== 'SU') {
-                navigator(MAIN_PATH());
+                navigate(MAIN_PATH());
                 return;
             }
             const board: Board = {...responseBody as GetBoardResponseDto};
@@ -102,13 +102,13 @@ export default function BoardDetail() {
             if (code === 'NP') alert('권한이 없습니다.');
             if (code === 'DBE') alert('데이터베이스 오류입니다.');
             if (code !== 'SU') return;
-            navigator(MAIN_PATH());
+            navigate(MAIN_PATH());
         }
 
         // event handler: 닉네임 클릭 이벤트 처리
         const onNicknameClickHandler = () => {
             if (!board) return;
-            navigator(USER_PATH(board.email));
+            navigate(USER_PATH(board.email));
         }
 
         // event handler: more 버튼 클릭 이벤트 처리 함수
@@ -120,7 +120,7 @@ export default function BoardDetail() {
         const onUpdateButtonClickHandler = () => {
             if(!board || !loginUser) return;
             if(board.email !== loginUser.email) return;
-            navigator(BOARD_PATH() + '/' + BOARD_UPDATE_PATH(board.boardNumber));
+            navigate(BOARD_PATH() + '/' + BOARD_UPDATE_PATH(board.boardNumber));
         }
 
         // event handler: 삭제 버튼 클릭 이벤트 처리 함수
@@ -130,11 +130,11 @@ export default function BoardDetail() {
             deleteBoardRequest(boardNumber, cookies.accessToken).then(deleteBoardResponse);
         }
 
-        // effect: 게시물 번호 paht variable이 변경될 때마다 게시물 불러오기
+        // effect: 게시물 번호 path variable이 변경될 때마다 게시물 불러오기
         useEffect(() => {
 
             if(!boardNumber) {
-                navigator(MAIN_PATH());
+                navigate(MAIN_PATH());
                 return;
             }
 
@@ -148,7 +148,7 @@ export default function BoardDetail() {
         return (
             <div id="board-detail-top">
                 <div className="board-detail-top-header">
-                    <div className="board-detail-title">제목입니다.</div>
+                    <div className="board-detail-title">{board?.title}</div>
                     <div className="board-detail-top-sub-box">
                         <div className="board-detail-write-info-box">
                             <div className="board-detail-writer-profile-image" style={{backgroundImage: `url(${board?.profileImage || defaultProfileImage})`}}></div>
