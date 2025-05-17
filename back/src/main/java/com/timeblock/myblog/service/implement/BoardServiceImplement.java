@@ -10,6 +10,7 @@ import com.timeblock.myblog.entity.BoardListViewEntity;
 import com.timeblock.myblog.entity.CommentEntity;
 import com.timeblock.myblog.entity.FavoriteEntity;
 import com.timeblock.myblog.entity.ImageEntity;
+import com.timeblock.myblog.entity.SearchLogEntity;
 import com.timeblock.myblog.repository.*;
 import com.timeblock.myblog.repository.resultSet.GetBoardResultSet;
 import com.timeblock.myblog.repository.resultSet.GetCommentListResultSet;
@@ -38,6 +39,7 @@ public class BoardServiceImplement implements BoardService {
     private final CommentRepository commentRepository;
     private final FavoriteRepository favoriteRepository;
     private final BoardListViewRepository boardListViewRepository;
+    private final SearchLogRepository searchLogRepository;
 
     @Override
     public ResponseEntity<? super GetBoardResponseDto> getBoard(int boardNumber) {
@@ -123,7 +125,31 @@ public class BoardServiceImplement implements BoardService {
         }
         return GetTop3BoardListResponseDto.success(boardListViewEntities);
     }
-    
+ 
+    @Override
+    public ResponseEntity<? super GetSearchBoardListResponseDto> getSearchBoardList(String searchWord, String preSearchWord) {
+        List<BoardListViewEntity> boardListViewEntities = new ArrayList<>();
+
+        try {
+            if(searchWord.equals(preSearchWord)) return GetSearchBoardListResponseDto.success(boardListViewEntities);
+            boardListViewEntities = boardListViewRepository.findByTitleContainsOrContentContainsOrderByWriteDatetimeDesc(searchWord, searchWord);
+
+            SearchLogEntity searchLogEntity = new SearchLogEntity(searchWord, preSearchWord, false);
+            searchLogRepository.save(searchLogEntity);
+            
+            boolean relation = preSearchWord !=null;
+            if(relation) {
+                SearchLogEntity relationSearchLogEntity = new SearchLogEntity(preSearchWord, searchWord, true);
+                searchLogRepository.save(relationSearchLogEntity);
+            }
+
+        } catch (Exception exception){
+            log.error(exception.getMessage());
+            return ResponseDto.databaseError();
+        }
+        return GetSearchBoardListResponseDto.success(boardListViewEntities);
+    }
+
     @Override
     public ResponseEntity<? super PostBoardResponseDto> postBoard(PostBoardRequestDto dto, String email) {
 

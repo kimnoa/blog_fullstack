@@ -101,7 +101,7 @@ export const getBoardRequest = async (boardNumber: number|string) => {
 export const getLatestBoardListRequest = async () => {
     const result = await axios.get(GET_LATEST_BOARD_LIST_URL())
         .then(response => {
-            const responseBody: GetLatestBoardListResponseDto[] = response.data;
+            const responseBody: GetLatestBoardListResponseDto = response.data;
             return responseBody;
         })
         .catch(error => {
