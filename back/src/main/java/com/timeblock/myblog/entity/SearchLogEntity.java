@@ -1,6 +1,10 @@
 package com.timeblock.myblog.entity;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,9 +20,9 @@ public class SearchLogEntity {
     private int sequence;
     private String searchWord;
     private String relationWord;
-    private boolean relation;
+    private int relation;
 
-    public SearchLogEntity(String searchWord, String relationWord, boolean relation) {
+    public SearchLogEntity(String searchWord, String relationWord, int relation) {
         this.searchWord = searchWord;
         this.relationWord = relationWord;
         this.relation = relation;

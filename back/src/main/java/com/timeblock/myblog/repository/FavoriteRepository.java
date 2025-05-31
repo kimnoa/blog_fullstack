@@ -1,15 +1,17 @@
 package com.timeblock.myblog.repository;
 
-import com.timeblock.myblog.dto.response.board.GetFavoriteListResponseDto;
-import com.timeblock.myblog.entity.FavoriteEntity;
-import com.timeblock.myblog.entity.primaryKey.FavoritePk;
-import com.timeblock.myblog.repository.resultSet.GetFavoriteListResultSet;
-import jakarta.transaction.Transactional;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+// import com.timeblock.myblog.dto.response.board.GetFavoriteListResponseDto;
+import com.timeblock.myblog.entity.FavoriteEntity;
+import com.timeblock.myblog.entity.primaryKey.FavoritePk;
+import com.timeblock.myblog.repository.resultSet.GetFavoriteListResultSet;
+
+import jakarta.transaction.Transactional;
 
 @Repository
 public interface FavoriteRepository extends JpaRepository<FavoriteEntity, FavoritePk> {
