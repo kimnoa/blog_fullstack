@@ -17,7 +17,7 @@ public interface SearchLogRepository extends JpaRepository<SearchLogEntity, Inte
         value = 
         "SELECT search_word, COUNT(search_word) AS search_count " +
         "FROM search_log " +
-        "WHERE relation IS FALSE " +
+        "WHERE relation = 0 " +
         "GROUP BY search_word " +
         "ORDER BY search_count DESC " +
         "LIMIT 15",
@@ -29,7 +29,7 @@ public interface SearchLogRepository extends JpaRepository<SearchLogEntity, Inte
         value = 
         "SELECT relation_word as search_word, count(relation_word) as count " +
         "FROM search_log " +
-        "WHERE search_word like '%검색어%' " +
+        "WHERE search_word like '%검색어%' and relation = 1 " +
         "GROUP BY relation_word " +
         "ORDER BY count DESC" +
         "LIMIT 15",
