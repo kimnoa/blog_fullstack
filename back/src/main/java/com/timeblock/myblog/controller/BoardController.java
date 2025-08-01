@@ -62,6 +62,7 @@ public class BoardController {
         return response;
     }
 
+
     @GetMapping({"/search-list/{searchWord}", "/search-list/{searchWord}/{preSearchWord}"})
     public ResponseEntity<? super GetSearchBoardListResponseDto> getSearchBoardList(
             @PathVariable("searchWord") String searchWord,
@@ -70,6 +71,15 @@ public class BoardController {
         ResponseEntity<? super GetSearchBoardListResponseDto> response = boardService.getSearchBoardList(searchWord, preSearchWord);
         return response;
     }
+
+    @GetMapping("/user-board-list/{email}")
+    public ResponseEntity<? super GetUserBoardListResponseDto> getUserBoardList(
+            @PathVariable("email") String email
+    ) {
+        ResponseEntity<? super GetUserBoardListResponseDto> response = boardService.getUserBoardList(email);
+        return response;
+    }
+
     @PostMapping("")
     public ResponseEntity<? super PostBoardResponseDto> postBoard(
             @RequestBody @Valid PostBoardRequestDto requestBody,

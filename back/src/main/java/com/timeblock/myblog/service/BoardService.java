@@ -13,6 +13,7 @@ public interface BoardService {
     ResponseEntity<? super GetLatestBoardListResponseDto> getLatestBoardList();
     ResponseEntity<? super GetTop3BoardListResponseDto> getTop3BoardList();
     ResponseEntity<? super GetSearchBoardListResponseDto> getSearchBoardList(String searchWord, String preSearchWord);
+    ResponseEntity<? super GetUserBoardListResponseDto> getUserBoardList(String email);
     ResponseEntity<? super PostBoardResponseDto> postBoard(PostBoardRequestDto dto, String email);
     ResponseEntity<? super PostCommentResponseDto> postComment(int boardNumber, PostCommentRequestDto dto, String email);
     ResponseEntity<? super PutFavoriteResponseDto> putFavorite(int boardNumber, String email);

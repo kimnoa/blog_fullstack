@@ -15,4 +15,6 @@ public interface BoardListViewRepository extends JpaRepository<BoardListViewEnti
     List<BoardListViewEntity> findTop3ByWriteDatetimeGreaterThanOrderByFavoriteCountDescViewCountDescCommentCountDescWriteDatetimeDesc(String writeDatetime);
 
     List<BoardListViewEntity> findByTitleContainsOrContentContainsOrderByWriteDatetimeDesc(String title, String content);
+
+    List<BoardListViewEntity> findByWriterEmailOrderByWriteDatetimeDesc(String writerEmail);
 }

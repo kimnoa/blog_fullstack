@@ -20,7 +20,7 @@ select
 b.board_number as board_number,
 b.title as title,
 b.content as content,
-i.imgboard_list_view as title_image,
+i.img as title_image,
 b.view_count as view_count,
 b.favorite_count as favorite_count,
 b.comment_count as comment_count,
@@ -37,16 +37,18 @@ on b.writer_email = u.email
 order by b.write_datetime desc
 limit 5 offset 0);
 
-drop view board_list_view;
+#drop view board_list_view;
 
 select * from board_list_view;
 
 select * from search_log;
 
-alter table image rename column img_file to image;
+-- alter table image rename column img_file to image;
 
 SELECT relation_word as search_word, count(relation_word) as count
 FROM search_log
 WHERE search_word like '%최신%'
 GROUP BY relation_word
 ORDER BY count DESC;
+
+insert search_log values (13,"제목", "테스트",1);

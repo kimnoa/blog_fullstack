@@ -15,11 +15,11 @@ public interface SearchLogRepository extends JpaRepository<SearchLogEntity, Inte
 
     @Query(
         value = 
-        "SELECT search_word, COUNT(search_word) AS search_count " +
+        "SELECT search_word as searchWord, COUNT(search_word) AS searchCount " +
         "FROM search_log " +
         "WHERE relation = 0 " +
         "GROUP BY search_word " +
-        "ORDER BY search_count DESC " +
+        "ORDER BY searchCount DESC " +
         "LIMIT 15",
         nativeQuery = true
     )
@@ -27,11 +27,11 @@ public interface SearchLogRepository extends JpaRepository<SearchLogEntity, Inte
 
     @Query(
         value = 
-        "SELECT relation_word as search_word, count(relation_word) as count " +
+        "SELECT relation_word as searchWord, count(relation_word) as count " +
         "FROM search_log " +
-        "WHERE search_word like '%검색어%' and relation = 1 " +
+        "WHERE search_word LIKE CONCAT('%', :searchWord, '%') AND relation = 1 " +
         "GROUP BY relation_word " +
-        "ORDER BY count DESC" +
+        "ORDER BY count DESC " +
         "LIMIT 15",
         nativeQuery = true
     )

@@ -200,7 +200,7 @@ export default function Header() {
             if (code !== 'SU') return;
 
             if(!boardNumber) return;
-            navigate(BOARD_PATH() + '/' + boardNumber);
+            navigate(BOARD_PATH() + '/' + BOARD_DETAIL_PATH(boardNumber));
         }
 
 

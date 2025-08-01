@@ -2,5 +2,5 @@ import ResponseDto from "../response.dto";
 
 export default interface GetPopularListResponseDto extends ResponseDto
 {
-    popularList: string[];
+    popularWordList: string[];
 }
