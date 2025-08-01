@@ -58,7 +58,7 @@ public class AuthServiceImplement implements AuthService {
 
         }
         catch (Exception exception){
-            log.error("Error in signUp: {}", exception.getStackTrace());
+            log.error(exception.getMessage());
 //            exception.printStackTrace();
             return ResponseDto.databaseError();
         }
@@ -84,7 +84,7 @@ public class AuthServiceImplement implements AuthService {
             token = jwtProvider.create(email);
 
     } catch (Exception exception){
-        log.error("Error in signIn: {}", exception.getStackTrace());
+        log.error(exception.getMessage());
 //        exception.printStackTrace();
         return ResponseDto.databaseError();
     }

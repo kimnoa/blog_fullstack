@@ -15,14 +15,15 @@ import lombok.Getter;
 @Getter
 public class GetPopularListResponseDto extends ResponseDto {
     
-    private List<Integer> popularWordList;
+    private List<String> popularWordList;
 
     private GetPopularListResponseDto(List<GetPopularListResultSet> resultSets) {
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
         
         this.popularWordList = new ArrayList<>();
         for (GetPopularListResultSet resultSet : resultSets) {
-            this.popularWordList.add(resultSet.getSearchCount());
+            String searchWord = resultSet.getSearchWord();
+            this.popularWordList.add(searchWord);
         }
         
     }

@@ -75,7 +75,7 @@ const GET_BOARD_URL = (boardNumber: number|string) => `${API_DOMAIN}/board/${boa
 const GET_LATEST_BOARD_LIST_URL = () => `${API_DOMAIN}/board/latest-list`;
 const GET_TOP_3_BOARD_LIST_URL = () => `${API_DOMAIN}/board/top-3-list`;
 const GET_SEARCH_BOARD_LIST_URL = (searchWord: string, preSearchWord: string | null) => 
-    `${API_DOMAIN}/board/search-list/${searchWord}/${preSearchWord? '/' + preSearchWord : ''}`; 
+    `${API_DOMAIN}/board/search-list/${searchWord}${preSearchWord? '/' + preSearchWord : ''}`; 
 const INCREASE_VIEW_COUNT_URL = (boardNumber: number|string) => `${API_DOMAIN}/board/${boardNumber}/increase-view-count`;
 const GET_FAVORITE_LIST_URL = (boardNumber: number|string) => `${API_DOMAIN}/board/${boardNumber}/favorite-list`;
 const GET_COMMENT_LIST_URL = (boardNumber: number|string) => `${API_DOMAIN}/board/${boardNumber}/comment-list`;
@@ -255,7 +255,7 @@ export const deleteBoardRequest = async (boardNumber: number|string, accessToken
 }
 
 const GET_POPULAR_LIST_URL = () => `${API_DOMAIN}/search/popular-list`;
-const GET_RELATION_LIST_URL = (searchWord:string) => `${API_DOMAIN}/search/${searchWord}/relation-list`;
+const GET_RELATION_LIST_URL = (searchWord:string) => `${API_DOMAIN}/search/relation-list/${searchWord}`;
 
 
 export const getPopularListRequest = async () => {

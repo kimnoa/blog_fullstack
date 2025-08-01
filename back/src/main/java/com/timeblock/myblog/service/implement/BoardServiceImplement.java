@@ -134,12 +134,12 @@ public class BoardServiceImplement implements BoardService {
             if(searchWord.equals(preSearchWord)) return GetSearchBoardListResponseDto.success(boardListViewEntities);
             boardListViewEntities = boardListViewRepository.findByTitleContainsOrContentContainsOrderByWriteDatetimeDesc(searchWord, searchWord);
 
-            SearchLogEntity searchLogEntity = new SearchLogEntity(searchWord, preSearchWord, false);
+            SearchLogEntity searchLogEntity = new SearchLogEntity(searchWord, preSearchWord, 0 );
             searchLogRepository.save(searchLogEntity);
             
             boolean relation = preSearchWord !=null;
             if(relation) {
-                SearchLogEntity relationSearchLogEntity = new SearchLogEntity(preSearchWord, searchWord, true);
+                SearchLogEntity relationSearchLogEntity = new SearchLogEntity(preSearchWord, searchWord, 1);
                 searchLogRepository.save(relationSearchLogEntity);
             }
 
@@ -148,6 +148,26 @@ public class BoardServiceImplement implements BoardService {
             return ResponseDto.databaseError();
         }
         return GetSearchBoardListResponseDto.success(boardListViewEntities);
+    }
+
+    @Override
+    public ResponseEntity<? super GetUserBoardListResponseDto> getUserBoardList(String email) {
+        List<BoardListViewEntity> boardListViewEntities = new ArrayList<>();
+
+        try {
+            // @해당 이메일이 존재하는지 확인
+            boolean existedUser = userRepository.existsByEmail(email);
+            if (!existedUser) {
+                return GetUserBoardListResponseDto.noExistUser();
+            }
+
+            boardListViewEntities = boardListViewRepository.findByWriterEmailOrderByWriteDatetimeDesc(email);
+
+        } catch (Exception exception) {
+            log.error(exception.getMessage());
+            return ResponseDto.databaseError();
+        }
+        return GetUserBoardListResponseDto.success(boardListViewEntities);
     }
 
     @Override

@@ -15,19 +15,19 @@ import { usePagination } from "hooks";
 import Pagination from "components/Pagination/assets";
 import { GetPopularListResponseDto } from "apis/response/search";
 
-// component: 메인 화면 컴포넌트
+// component: 메인 화면 컴포넌트 //
 export default function Main() {
 
-    // function: 네비게이트 함수
+    // function: 네비게이트 함수 //
     const navigate = useNavigate();
 
-    // component: 메인 화면 상단 컴포넌트
+    // component: 메인 화면 상단 컴포넌트 //
     const MainTop = () => {
 
-        // state: 주간 top3 게시물 리스트 상태
+        // state: 주간 top3 게시물 리스트 상태 //
         const [top3BoardList, setTop3BoardList] = useState<BoardListItem[]>([]);
-
-        // function: get top 3 board list response 처리 함수
+        
+        // function: get top 3 board list response 처리 함수 //
         const getTop3BoardListResponse = (responseBody: GetTop3BoardListResponseDto|ResponseDto|null) => {
             if (!responseBody) return;
             const { code } = responseBody;
@@ -37,7 +37,7 @@ export default function Main() {
             const { top3List } = responseBody as GetTop3BoardListResponseDto;
             setTop3BoardList(top3List);
         }
-        // effect: 첫 마운트 시 주간 top3 게시물 리스트 상태 초기화 함수
+        // effect: 첫 마운트 시 주간 top3 게시물 리스트 상태 초기화 함수 //
         useEffect(() => {
             getTop3BoardListRequest().then(getTop3BoardListResponse);
         }, []);
@@ -49,7 +49,7 @@ export default function Main() {
                     <div className="main-top-contents-box">
                         <div className="main-top-contents-title">{""}</div>
                         <div className="main-top-contents">
-                            {top3BoardList.map(top3ListItem => <Top3Item top3ListItem={top3ListItem} />)}
+                            {top3BoardList && top3BoardList.map(top3ListItem => <Top3Item top3ListItem={top3ListItem} />)}
                         </div>
                     </div>
                 </div>
@@ -94,8 +94,8 @@ export default function Main() {
             const { code } = responseBody;
             if (code === 'DBE') alert('데이터베이스 오류입니다.');
             if (code !== 'SU') return;
-            const { popularList } = responseBody as GetPopularListResponseDto;
-            setPopularKeywordList(popularList);
+            const { popularWordList } = responseBody as GetPopularListResponseDto;
+            setPopularKeywordList(popularWordList);
         }
         // event handler: 인기 검색어 클릭 이벤트 처리
         const onPopularClickWord = (word: string) => {
@@ -105,6 +105,7 @@ export default function Main() {
         useEffect(() => {
             getLatestBoardListRequest().then(getLatestBoardListResponse);  
             getPopularListRequest().then(getPopularListResponse);
+            // setPopularKeywordList(['제목','연관어'])
         }
         , []);
         // render: 메인 화면 하단 컴포넌트 랜더링
@@ -114,14 +115,14 @@ export default function Main() {
                     <div className="main-bottom-title"> {"최신 게시물"}</div>
                     <div className="main-bottom-contents-box">
                         <div className="main-bottom-current-contents">
-                            {viewList.map(boardListItem => <BoardItem boardListItem={boardListItem}/>)}
+                            {viewList&&viewList.map(boardListItem => <BoardItem boardListItem={boardListItem}/>)}
                         </div>
                         <div className="main-bottom-popular-box">
                             <div className="main-bottom-popular-card">
                                 <div className="main-bottom-popular-card-box">
                                     <div className="main-bottom-popular-card-title" >{"인기 검색어"}</div>
                                     <div className="main-bottom-popular-card-contents">
-                                        {popularKeywordList.map(word => <div className="word-badge">{word}</div>)}
+                                        {popularKeywordList&& popularKeywordList.map(word => <div className="word-badge" onClick={() => onPopularClickWord(word)}>{word}</div>)}
 
                                     </div>
                                 </div>

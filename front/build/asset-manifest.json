@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b4faffa4.css",
+    "main.js": "/static/js/main.997f6f5a.js",
+    "static/media/auth-background.png": "/static/media/auth-background.f4dde02a2b607b99f71a.png",
+    "static/media/default-profile-image_kirby.png": "/static/media/default-profile-image_kirby.816ce7bc7195827f8534.png",
+    "index.html": "/index.html",
+    "main.b4faffa4.css.map": "/static/css/main.b4faffa4.css.map",
+    "main.997f6f5a.js.map": "/static/js/main.997f6f5a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b4faffa4.css",
+    "static/js/main.997f6f5a.js"
+  ]
+}
