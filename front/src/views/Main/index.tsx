@@ -5,7 +5,7 @@ import Board from "types/interface/board.interface";
 import { BoardListItem } from "types/interface";
 import { top3BoardListMock } from "mocks";
 import BoardItem from "components/BoardItem";
-import { SEARCH_PATH } from "constant";
+import { BOARD_DETAIL_PATH, BOARD_PATH, SEARCH_PATH } from "constant";
 import { Navigate, useNavigate } from "react-router-dom";
 import { get } from "http";
 import { getLatestBoardListRequest, getPopularListRequest, getTop3BoardListRequest } from "apis";
@@ -49,7 +49,7 @@ export default function Main() {
                     <div className="main-top-contents-box">
                         <div className="main-top-contents-title">{""}</div>
                         <div className="main-top-contents">
-                            {top3BoardList && top3BoardList.map(top3ListItem => <Top3Item top3ListItem={top3ListItem} />)}
+                            {top3BoardList && top3BoardList.map(top3ListItem => <Top3Item top3ListItem={top3ListItem} key={top3ListItem.boardNumber}/>)}
                         </div>
                     </div>
                 </div>
@@ -101,6 +101,11 @@ export default function Main() {
         const onPopularClickWord = (word: string) => {
             navigate(SEARCH_PATH(word));
         }
+
+        // event handler: board 클릭 이벤트 처리
+        const onBoardClickHandler = (boardNumber: number) => {
+            navigate(BOARD_PATH() + '/' + BOARD_DETAIL_PATH(boardNumber));
+        }
         // effect : 첫 마운트 시 실행될 함수
         useEffect(() => {
             getLatestBoardListRequest().then(getLatestBoardListResponse);  
@@ -115,7 +120,12 @@ export default function Main() {
                     <div className="main-bottom-title"> {"최신 게시물"}</div>
                     <div className="main-bottom-contents-box">
                         <div className="main-bottom-current-contents">
-                            {viewList&&viewList.map(boardListItem => <BoardItem boardListItem={boardListItem}/>)}
+                            {viewList&&viewList.map(boardListItem => (
+                                <BoardItem
+                                    boardListItem={boardListItem}
+                                    onClick={() => onBoardClickHandler(boardListItem.boardNumber)}
+                                />
+                            ))}
                         </div>
                         <div className="main-bottom-popular-box">
                             <div className="main-bottom-popular-card">

@@ -82,6 +82,11 @@
     gap: 24px;
 }
 
+.main-bottom-current-contents:hover {
+    cursor: pointer;
+}
+
+
 .main-bottom-current-contents {
     grid-column: 1 / 2;
     

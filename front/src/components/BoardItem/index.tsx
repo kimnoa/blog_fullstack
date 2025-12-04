@@ -6,11 +6,12 @@ import DefaultProfileImage from "../../assets/image/default-profile-image.png";
 
 interface Props {
     boardListItem: BoardListItem
+    onClick?: (boardNumber: number) => void
 }
 
 
 //  component: BoardListItem 컴포넌트//
-export default function BoardListItemFunc({boardListItem}: Props) {
+export default function BoardListItemFunc({boardListItem, onClick}: Props) {
 
     //  properties
     const {boardNumber, title,content, boardTitleImage}= boardListItem;
@@ -22,13 +23,13 @@ export default function BoardListItemFunc({boardListItem}: Props) {
 
     //  event handler: 게시물 아이템 클릭 이벤트 처리 함수
     const onClickHandler = () => {
-        // navigate(boardNumber);
+        if (onClick) onClick(boardNumber);
     }
 
 
     //  render: BoardListItem 컴포넌트 랜더링//
     return (
-        <div className='board-list-item'>
+        <div className='board-list-item' onClick={onClickHandler}>
             <div className='board-list-item-main-box'>
                 <div className='board-list-item-top'>
                     <div className='board-list-item-profile-box'>
