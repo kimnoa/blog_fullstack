@@ -2,7 +2,6 @@ package com.timeblock.myblog.dto.response.board;
 
 import com.timeblock.myblog.common.ResponseCode;
 import com.timeblock.myblog.common.ResponseMessage;
-import com.timeblock.myblog.dto.request.board.PostBoardRequestDto;
 import com.timeblock.myblog.dto.response.ResponseDto;
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

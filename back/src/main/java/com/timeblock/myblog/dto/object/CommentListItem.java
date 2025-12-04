@@ -1,6 +1,5 @@
 package com.timeblock.myblog.dto.object;
 
-import com.timeblock.myblog.dto.response.board.GetCommentListResponseDto;
 import com.timeblock.myblog.repository.resultSet.GetCommentListResultSet;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

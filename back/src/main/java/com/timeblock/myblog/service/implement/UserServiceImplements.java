@@ -63,10 +63,9 @@ public class UserServiceImplements implements UserService {
     }
 
     @Override
-    public ResponseEntity<? super PatchNicknameResponseDto> patchNickname(PatchNicknameRequestDto dto) {
+    public ResponseEntity<? super PatchNicknameResponseDto> patchNickname(PatchNicknameRequestDto dto, String email) {
         try {
             String nickname = dto.getNickname();
-            String email = dto.getEmail();
 
             UserEntity userEntity = userRepository.findByEmail(email);
             if (userEntity == null) {
@@ -92,9 +91,8 @@ public class UserServiceImplements implements UserService {
     
 
     @Override
-    public ResponseEntity<? super PatchProfileImageResponseDto> patchProfileImage(PatchProfileImageRequestDto dto) {
+    public ResponseEntity<? super PatchProfileImageResponseDto> patchProfileImage(PatchProfileImageRequestDto dto, String email) {
         try {
-            String email = dto.getEmail();
             String profileImage = dto.getProfileImage();
 
             UserEntity userEntity = userRepository.findByEmail(email);

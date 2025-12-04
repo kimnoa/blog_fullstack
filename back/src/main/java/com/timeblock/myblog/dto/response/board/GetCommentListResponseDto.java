@@ -8,7 +8,6 @@ import com.timeblock.myblog.repository.resultSet.GetCommentListResultSet;
 import lombok.Getter;
 import org.springframework.http.ResponseEntity;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
