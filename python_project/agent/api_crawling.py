@@ -1,8 +1,14 @@
 import asyncio
 from crawl4ai import *
-import fastapi
+from fastapi import FASTAPI
 
 urlText = "Input here"
+
+app = FASTAPI()
+
+@app.get("/")
+def read():
+    return {"id" : "10"}
 
 async def main():
     async with AsyncWebCrawler() as crawler:
