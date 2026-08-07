@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from "react";
-import "./style.css";
-import Top3Item from "components/Top3Item";
-import Board from "types/interface/board.interface";
-import { BoardListItem } from "types/interface";
-import { top3BoardListMock } from "mocks";
-import BoardItem from "components/BoardItem";
-import { BOARD_DETAIL_PATH, BOARD_PATH, SEARCH_PATH } from "constant";
-import { Navigate, useNavigate } from "react-router-dom";
-import { get } from "http";
-import { getLatestBoardListRequest, getPopularListRequest, getTop3BoardListRequest } from "apis";
-import { GetLatestBoardListResponseDto, GetTop3BoardListResponseDto } from "apis/response/board";
+import { getLatestBoardListRequest, getPopularListRequest, getTop3BoardListRequest } from "@/apis";
+import BoardItem from "@/components/BoardItem";
+import Pagination from "@/components/Pagination/assets";
+import Top3Item from "@/components/Top3Item";
+import { BOARD_DETAIL_PATH, BOARD_PATH, SEARCH_PATH } from "@/constant";
+import { usePagination } from "@/hooks";
 import { ResponseDto } from "apis/response";
-import { usePagination } from "hooks";
-import Pagination from "components/Pagination/assets";
+import { GetLatestBoardListResponseDto, GetTop3BoardListResponseDto } from "apis/response/board";
 import { GetPopularListResponseDto } from "apis/response/search";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { BoardListItem } from "types/interface";
+import "./style.css";
 
 // component: 메인 화면 컴포넌트 //
 export default function Main() {

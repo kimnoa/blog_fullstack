@@ -1,14 +1,13 @@
-import React, {ChangeEvent, useEffect, useRef, useState} from "react";
-import "./style.css";
-import {useBoardStore, useLoginUserStore} from "../../../stores";
-import {useNavigate, useParams} from "react-router-dom";
-import {MAIN_PATH} from "../../../constant";
-import {useCookies} from "react-cookie";
-import { getBoardRequest } from "apis";
-import { GetBoardResponseDto } from "apis/response/board";
+import { getBoardRequest } from "@/apis";
+import { convertUrlsToFile } from "@/utils/convertUrlsToFile";
 import { ResponseDto } from "apis/response";
-import { log } from "console";
-import { convertUrlsToFile } from "utils/convertUrlsToFile";
+import { GetBoardResponseDto } from "apis/response/board";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate, useParams } from "react-router-dom";
+import { MAIN_PATH } from "../../../constant";
+import { useBoardStore, useLoginUserStore } from "../../../stores";
+import "./style.css";
 
 // component:게시물 수정 화면 컴포넌트
 export default function BoardUpdate() {

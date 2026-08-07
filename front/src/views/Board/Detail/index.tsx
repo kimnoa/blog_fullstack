@@ -1,18 +1,12 @@
-import React, {ChangeEvent, useEffect, useRef, useState} from "react";
-import "./style.css";
-import FavoriteItem from "../../../components/FavoriteItem";
-import {CommentListItem, FavoriteListItem} from "../../../types/interface";
-import {commentListMock} from "../../../mocks";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import CommentItem from "../../../components/CommentItem";
+import FavoriteItem from "../../../components/FavoriteItem";
 import Pagination from "../../../components/Pagination/assets";
+import { CommentListItem, FavoriteListItem } from "../../../types/interface";
+import "./style.css";
 
-import defaultProfileImage from 'assets/image/default-profile-image.png';
-import {useLoginUserStore} from "../../../stores";
-import {useNavigate, useParams} from "react-router-dom";
-import {BOARD_PATH, BOARD_UPDATE_PATH, MAIN_PATH, USER_PATH} from "../../../constant";
-import Board from "../../../types/interface/board.interface";
-import GetBoardResponseDto from "../../../apis/response/board/get-board.response.dto";
-import {ResponseDto} from "../../../apis/response";
+import defaultProfileImage from "@/assets/image/default-profile-image.png";
+import { useNavigate, useParams } from "react-router-dom";
 import {
     deleteBoardRequest,
     getBoardRequest,
@@ -21,17 +15,22 @@ import {
     increaseViewCountRequest, postCommentRequest,
     putFavoriteRequest
 } from "../../../apis";
+import { ResponseDto } from "../../../apis/response";
 import {
     DeleteBoardResponseDto,
     GetCommentListResponseDto,
     GetFavoriteListResponseDto,
     IncreaseViewCountResponseDto, PostCommentResponseDto, PutFavoriteResponseDto
 } from "../../../apis/response/board";
+import GetBoardResponseDto from "../../../apis/response/board/get-board.response.dto";
+import { BOARD_PATH, BOARD_UPDATE_PATH, MAIN_PATH, USER_PATH } from "../../../constant";
+import { useLoginUserStore } from "../../../stores";
+import Board from "../../../types/interface/board.interface";
 
+import { usePagination } from "@/hooks";
 import dayjs from "dayjs";
-import {useCookies} from "react-cookie";
-import {PostCommentRequestDto} from "../../../apis/request/board";
-import { usePagination } from "hooks";
+import { useCookies } from "react-cookie";
+import { PostCommentRequestDto } from "../../../apis/request/board";
 
 // component: 게시물 상세 화면 컴포넌트
 export default function BoardDetail() {

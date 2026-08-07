@@ -1,53 +1,49 @@
 // React
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useCookies } from "react-cookie";
+import { useNavigate, useParams } from "react-router-dom";
 
 import "./style.css";
 
 // hook
-import usePagination from "hooks/pagination.hook";
+import usePagination from "@/hooks/pagination.hook";
 
 // store
-import { useLoginUserStore } from "stores";
+import { useLoginUserStore } from "@/stores";
 
 // API and Types
-import { 
-    fileUploadRequest, 
-    getUserBoardListRequest, 
-    getUserRequest, 
-    patchNicknameRequest, 
-    patchProfileImageRequest 
-} from "apis";
-import { 
-    GetUserResponseDto, 
-    PatchNicknameResponseDto, 
-    PatchProfileImageResponseDto
-} from "apis/response/user";
-import { ResponseDto } from "apis/response";
-import { 
-    PatchNicknameRequestDto, 
-    PatchProfileImageRequestDto 
+import {
+  fileUploadRequest,
+  getUserBoardListRequest,
+  getUserRequest,
+  patchNicknameRequest,
+  patchProfileImageRequest
+} from "@/apis";
+import {
+  PatchNicknameRequestDto,
+  PatchProfileImageRequestDto
 } from "apis/request/user";
+import { ResponseDto } from "apis/response";
 import { GetUserBoardListResponseDto } from "apis/response/board";
+import {
+  GetUserResponseDto,
+  PatchNicknameResponseDto,
+  PatchProfileImageResponseDto
+} from "apis/response/user";
 
 // const and enum
-import { BOARD_PATH, BOARD_WRITE_PATH, MAIN_PATH, USER_PATH } from "constant";
-import ResponseCode from "types/enum/resopnse-code.enum";
+import { BOARD_PATH, BOARD_WRITE_PATH, MAIN_PATH, USER_PATH } from "@/constant";
 
 // interface
-import { BoardListItem, User } from "types/interface";
+import { BoardListItem } from "types/interface";
 
 // 컴포넌트
-import BoardItem from "components/BoardItem";
+import BoardItem from "@/components/BoardItem";
 
 // 이미지
-import defaultProfileImage from 'assets/image/default-profile-image.png';
-import ExampleProfileImage from 'assets/image/default-profile-image_kirby.png';
 
 // mock
-import { latestBoardListMock } from "mocks";
-import Pagination from "components/Pagination/assets";
+import Pagination from "@/components/Pagination/assets";
 
 
 // component: 유저 화면 컴포넌트
