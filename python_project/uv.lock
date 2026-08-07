@@ -1068,6 +1068,12 @@ wheels = [
 ]
 
 [[package]]
+name = "optional-django"
+version = "0.3.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/74/50/14da44d6d976445b19c49a03e2f3b239cfa465b2e87184c4003c1063ae4e/optional-django-0.3.0.tar.gz", hash = "sha256:2cd56b864ecf88e420aa882209ca7849114f38bc7089344cc9e476ea91aeb010", size = 9779, upload-time = "2015-05-04T10:28:00.455Z" }
+
+[[package]]
 name = "packaging"
 version = "26.3"
 source = { registry = "https://pypi.org/simple" }
@@ -1355,6 +1361,7 @@ source = { editable = "." }
 dependencies = [
     { name = "crawl4ai" },
     { name = "fastapi" },
+    { name = "react" },
     { name = "uvicorn" },
 ]
 
@@ -1362,6 +1369,7 @@ dependencies = [
 requires-dist = [
     { name = "crawl4ai", specifier = ">=0.9.2" },
     { name = "fastapi", specifier = ">=0.141.1" },
+    { name = "react", specifier = ">=4.3.0" },
     { name = "uvicorn", specifier = ">=0.52.1" },
 ]
 
@@ -1402,6 +1410,16 @@ sdist = { url = "https://files.pythonhosted.org/packages/fc/0a/f9579384aa017d8b4
 wheels = [
     { url = "https://files.pythonhosted.org/packages/2a/21/f691fb2613100a62b3fa91e9988c991e9ca5b89ea31c0d3152a3210344f9/rank_bm25-0.2.2-py3-none-any.whl", hash = "sha256:7bd4a95571adadfc271746fa146a4bcfd89c0cf731e49c3d1ad863290adbe8ae", size = 8584, upload-time = "2022-02-16T12:10:50.626Z" },
 ]
+
+[[package]]
+name = "react"
+version = "4.3.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "optional-django" },
+    { name = "requests" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/c1/bf/d8489400d3e46a4629c57e032b2a94e1f866e434e374411bdf591c459b8a/react-4.3.0.tar.gz", hash = "sha256:d7455fa9d91bb9e8f9981d37308f8bf78fcdeaa5b4b99f94f3fda1bd68b7d19c", size = 10278, upload-time = "2018-10-08T09:55:41.421Z" }
 
 [[package]]
 name = "referencing"
