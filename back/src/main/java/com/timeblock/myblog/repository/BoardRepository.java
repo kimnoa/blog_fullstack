@@ -4,9 +4,7 @@ import com.timeblock.myblog.entity.BoardEntity;
 import com.timeblock.myblog.repository.resultSet.GetBoardResultSet;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface BoardRepository extends JpaRepository<BoardEntity, Integer> {
 
     boolean existsByBoardNumber(Integer boardNumber);

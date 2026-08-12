@@ -1,16 +1,18 @@
 package com.timeblock.myblog.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.lang.NonNull;
 // import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import jakarta.annotation.Nonnull;
 
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
 
     @Override
-    public void addCorsMappings(@NonNull CorsRegistry corsRegistry) {
+    
+    public void addCorsMappings(@Nonnull CorsRegistry corsRegistry) {
 
         
         corsRegistry.addMapping("/**")

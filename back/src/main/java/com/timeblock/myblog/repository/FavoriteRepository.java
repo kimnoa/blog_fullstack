@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
 // import com.timeblock.myblog.dto.response.board.GetFavoriteListResponseDto;
 import com.timeblock.myblog.entity.FavoriteEntity;
@@ -13,7 +12,6 @@ import com.timeblock.myblog.repository.resultSet.GetFavoriteListResultSet;
 
 import jakarta.transaction.Transactional;
 
-@Repository
 public interface FavoriteRepository extends JpaRepository<FavoriteEntity, FavoritePk> {
 
     FavoriteEntity findByBoardNumberAndUserEmail(Integer boardNumber, String userEmail);

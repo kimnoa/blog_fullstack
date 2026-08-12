@@ -4,13 +4,11 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.stereotype.Repository;
 
 import com.timeblock.myblog.entity.SearchLogEntity;
 import com.timeblock.myblog.repository.resultSet.GetPopularListResultSet;
 import com.timeblock.myblog.repository.resultSet.GetRelationListResultSet;
 
-@Repository
 public interface SearchLogRepository extends JpaRepository<SearchLogEntity, Integer> {
 
     @Query(

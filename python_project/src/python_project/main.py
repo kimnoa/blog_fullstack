@@ -7,15 +7,6 @@ urlText = "https://www.aitimes.com/"
 
 app = FastAPI()
 
-@app.get("/")
-def read():
-    return {"id" : "10"}
-
-@app.get("/url/{url_name}")
-async def find_data(url_name:str)->None:
-    urlText = url_name or "Input here"
-    # await crawler_agent(urlText) //TODO
-
 async def crawler_agent(urlText:str):
     async with AsyncWebCrawler() as crawler:
         # crawler_config = CrawlerRunConfig()
@@ -24,6 +15,17 @@ async def crawler_agent(urlText:str):
         )
         time.sleep(10)
         print(result.markdown)
+
+
+@app.get("/")
+def read():
+    return {"id" : "10"}
+
+@app.get("/url/{url_name}")
+def find_data(url_name:str)->None:
+    urlText = url_name or "Input here"
+    crawler_agent(urlText) #TODO
+
 
 if __name__ == "__main__":
     asyncio.run(crawler_agent(urlText))
