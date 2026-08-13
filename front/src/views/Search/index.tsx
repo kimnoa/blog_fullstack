@@ -1,14 +1,14 @@
 import { GetRelationListRequest, getSearchBoardListRequest } from "@/apis";
+import { ResponseDto } from "@/apis/response";
+import { GetSearchBoardListResponseDto } from "@/apis/response/board";
+import { GetRelationListResponseDto } from "@/apis/response/search";
 import BoardItem from "@/components/BoardItem";
 import Pagination from "@/components/Pagination/assets";
 import { SEARCH_PATH } from "@/constant";
 import { usePagination } from "@/hooks";
-import { ResponseDto } from "apis/response";
-import { GetSearchBoardListResponseDto } from "apis/response/board";
-import { GetRelationListResponseDto } from "apis/response/search";
+import { BoardListItem } from "@/types/interface";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { BoardListItem } from "types/interface";
 import "./style.css";
 
 // component: 게시물 검색 화면 컴포넌트

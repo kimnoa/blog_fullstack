@@ -1,7 +1,7 @@
 import { getBoardRequest } from "@/apis";
+import { ResponseDto } from "@/apis/response";
+import { GetBoardResponseDto } from "@/apis/response/board";
 import { convertUrlsToFile } from "@/utils/convertUrlsToFile";
-import { ResponseDto } from "apis/response";
-import { GetBoardResponseDto } from "apis/response/board";
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate, useParams } from "react-router-dom";

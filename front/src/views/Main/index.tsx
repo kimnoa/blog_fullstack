@@ -1,16 +1,16 @@
 import { getLatestBoardListRequest, getPopularListRequest, getTop3BoardListRequest } from "@/apis";
+import { ResponseDto } from "@/apis/response";
+import { GetLatestBoardListResponseDto, GetTop3BoardListResponseDto } from "@/apis/response/board";
+import { GetPopularListResponseDto } from "@/apis/response/search";
 import BoardItem from "@/components/BoardItem";
 import Pagination from "@/components/Pagination/assets";
 import Top3Item from "@/components/Top3Item";
 import { BOARD_DETAIL_PATH, BOARD_PATH, SEARCH_PATH } from "@/constant";
 import { usePagination } from "@/hooks";
-import { ResponseDto } from "apis/response";
-import { GetLatestBoardListResponseDto, GetTop3BoardListResponseDto } from "apis/response/board";
-import { GetPopularListResponseDto } from "apis/response/search";
+import { BoardListItem } from "@/types/interface";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { BoardListItem } from "types/interface";
-import "./style.css";
+import ".";
 
 // component: 메인 화면 컴포넌트 //
 export default function Main() {

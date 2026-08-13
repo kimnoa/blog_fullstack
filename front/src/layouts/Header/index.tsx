@@ -1,6 +1,11 @@
-import React, {ChangeEvent, KeyboardEvent, useEffect, useRef, useState} from "react";
-import "./style.css";
-import {useLocation, useNavigate, useParams} from "react-router-dom";
+import PatchBoardRequestDto from "@/apis/request/board/patch-board.request.dto";
+import { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
+import { useCookies } from "react-cookie";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { fileUploadRequest, patchBoardRequest, postBoardRequest } from "../../apis";
+import { PostBoardRequestDto } from "../../apis/request/board";
+import { ResponseDto } from "../../apis/response";
+import { PatchBoardResponseDto, PostBoardResponseDto } from "../../apis/response/board";
 import {
     AUTH_PATH,
     BOARD_DETAIL_PATH,
@@ -11,13 +16,8 @@ import {
     SEARCH_PATH,
     USER_PATH
 } from "../../constant";
-import {useCookies} from "react-cookie";
-import {useBoardStore, useLoginUserStore} from "../../stores";
-import {fileUploadRequest, patchBoardRequest, postBoardRequest} from "../../apis";
-import {PostBoardRequestDto} from "../../apis/request/board";
-import {PatchBoardResponseDto, PostBoardResponseDto} from "../../apis/response/board";
-import {ResponseDto} from "../../apis/response";
-import PatchBoardRequestDto from "apis/request/board/patch-board.request.dto";
+import { useBoardStore, useLoginUserStore } from "../../stores";
+import "./style.css";
 
 //  component: 헤더 레이아웃
 export default function Header() {

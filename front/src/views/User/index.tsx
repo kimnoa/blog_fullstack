@@ -13,29 +13,29 @@ import { useLoginUserStore } from "@/stores";
 
 // API and Types
 import {
-  fileUploadRequest,
-  getUserBoardListRequest,
-  getUserRequest,
-  patchNicknameRequest,
-  patchProfileImageRequest
+    fileUploadRequest,
+    getUserBoardListRequest,
+    getUserRequest,
+    patchNicknameRequest,
+    patchProfileImageRequest
 } from "@/apis";
 import {
-  PatchNicknameRequestDto,
-  PatchProfileImageRequestDto
-} from "apis/request/user";
-import { ResponseDto } from "apis/response";
-import { GetUserBoardListResponseDto } from "apis/response/board";
+    PatchNicknameRequestDto,
+    PatchProfileImageRequestDto
+} from "@/apis/request/user";
+import { ResponseDto } from "@/apis/response";
+import { GetUserBoardListResponseDto } from "@/apis/response/board";
 import {
-  GetUserResponseDto,
-  PatchNicknameResponseDto,
-  PatchProfileImageResponseDto
-} from "apis/response/user";
+    GetUserResponseDto,
+    PatchNicknameResponseDto,
+    PatchProfileImageResponseDto
+} from "@/apis/response/user";
 
 // const and enum
 import { BOARD_PATH, BOARD_WRITE_PATH, MAIN_PATH, USER_PATH } from "@/constant";
 
 // interface
-import { BoardListItem } from "types/interface";
+import { BoardListItem } from "@/types/interface";
 
 // 컴포넌트
 import BoardItem from "@/components/BoardItem";

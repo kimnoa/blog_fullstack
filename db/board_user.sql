@@ -43,7 +43,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('email@email.com','P!ssw0rd','nickname','01012345678','서울특별시 성동구','롯데백화점',NULL,0),('example@example.com','$2a$10$ikkkACp3m.D6qbw3WwTeXO2KjU2TdJyOC98XCvgJf2m39/jFMfDsW','user123','01056781234','123 Street, City','Apt 101',NULL,1),('kang970316@naver.com','$2a$10$y//FXM5gbG9EK49THC1TNOy2E24own6MWwxox1L6WHzw5keCMsfk.','감자','01093400316','서울 성동구 행당로 79','124-801',NULL,1);
+INSERT INTO `user` VALUES ('email@email.com','P!ssw0rd','nickname','01012345678','서울특별시 성동구','롯데백화점',NULL,0),('example@example.com','$2a$10$ikkkACp3m.D6qbw3WwTeXO2KjU2TdJyOC98XCvgJf2m39/jFMfDsW','user123','01056781234','123 Street, City','Apt 101',NULL,1),('example@naver.com','$2a$10$y//FXM5gbG9EK49THC1TNOy2E24own6MWwxox1L6WHzw5keCMsfk.','감자','01012345678','any street','apt 101',NULL,1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
