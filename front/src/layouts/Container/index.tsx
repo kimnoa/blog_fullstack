@@ -1,9 +1,9 @@
-import React from "react";
-import "./style.css";
-import Header from "../Header";
-import {Outlet, useLocation} from "react-router-dom";
+// import React from "react";
+import '@/layouts/Container/style.css';
+import { Outlet, useLocation } from "react-router-dom";
+import { AUTH_PATH } from "../../constant";
 import Footer from "../Footer";
-import {AUTH_PATH} from "../../constant";
+import Header from "../Header";
 
 // component: 레이아웃
 export default function Container() {

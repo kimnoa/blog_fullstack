@@ -1,4 +1,5 @@
 import PatchBoardRequestDto from "@/apis/request/board/patch-board.request.dto";
+import '@/layouts/Header/style.css';
 import { ChangeEvent, KeyboardEvent, useEffect, useRef, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
@@ -17,7 +18,6 @@ import {
     USER_PATH
 } from "../../constant";
 import { useBoardStore, useLoginUserStore } from "../../stores";
-import "./style.css";
 
 //  component: 헤더 레이아웃
 export default function Header() {

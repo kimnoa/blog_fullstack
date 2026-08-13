@@ -1,21 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import './App.css';
-import BoardListItemFunc from "./components/BoardItem";
-import {latestBoardListMock, top3BoardListMock, commentListMock, favoriteListMock} from "./mocks";
-import Top3Item from "./components/Top3Item";
-import CommentItem from "./components/CommentItem";
-import FavoriteItem from "./components/FavoriteItem";
-import InputBox from "./components/InputBox";
-import Footer from "./layouts/Footer";
-import {Route, Routes} from "react-router-dom";
-import Main from "./views/Main";
-import Authentication from "./views/Authentication";
-import Search from "./views/Search";
-import UserP from "./views/User";
-import BoardDetail from "./views/Board/Detail";
-import BoardWrite from "./views/Board/Write";
-import BoardUpdate from "./views/Board/Update";
-import Container from "./layouts/Container";
+import '@/App.css';
+import { useEffect } from 'react';
+import { useCookies } from "react-cookie";
+import { Route, Routes } from "react-router-dom";
+import { getSignInUserRequest } from "./apis";
+import { ResponseDto } from "./apis/response";
+import { GetSignInUserResponseDto } from "./apis/response/user";
 import {
     AUTH_PATH,
     BOARD_DETAIL_PATH,
@@ -25,12 +14,16 @@ import {
     SEARCH_PATH,
     USER_PATH
 } from "./constant";
-import {useCookies} from "react-cookie";
-import {useLoginUserStore} from "./stores";
-import {getSignInUserRequest} from "./apis";
-import {ResponseDto} from "./apis/response";
-import {GetSignInUserResponseDto} from "./apis/response/user";
-import {User} from "./types/interface";
+import Container from "./layouts/Container";
+import { useLoginUserStore } from "./stores";
+import { User } from "./types/interface";
+import Authentication from "./views/Authentication";
+import BoardDetail from "./views/Board/Detail";
+import BoardUpdate from "./views/Board/Update";
+import BoardWrite from "./views/Board/Write";
+import Main from "./views/Main";
+import Search from "./views/Search";
+import UserP from "./views/User";
 
 // component: Application 컴포넌트
 function App() {

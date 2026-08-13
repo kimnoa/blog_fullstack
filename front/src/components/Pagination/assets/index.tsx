@@ -1,5 +1,5 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
-import "./style.css";
+import '@/components/Pagination/assets/style.css';
+import { Dispatch, SetStateAction } from "react";
 
 // interface: 페이지네이션 컴포넌트 Properties
 interface Props {

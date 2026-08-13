@@ -8,9 +8,9 @@ import Top3Item from "@/components/Top3Item";
 import { BOARD_DETAIL_PATH, BOARD_PATH, SEARCH_PATH } from "@/constant";
 import { usePagination } from "@/hooks";
 import { BoardListItem } from "@/types/interface";
+import "@/views/Main/style.css";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ".";
 
 // component: 메인 화면 컴포넌트 //
 export default function Main() {
@@ -42,7 +42,7 @@ export default function Main() {
         return (
             <div id="main-top-wrapper">
                 <div className="main-top-container">
-                    <div className="main-top-intro">{"Noah's blog에서 \n 다양한 내용을 기록해보세요."}</div>
+                    <div className="main-top-title">{"Noah's blog에서 \n 다양한 내용을 기록해보세요."}</div>
                     <div className="main-top-contents-box">
                         <div className="main-top-contents-title">{""}</div>
                         <div className="main-top-contents">

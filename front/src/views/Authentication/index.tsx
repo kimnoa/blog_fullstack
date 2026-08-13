@@ -1,15 +1,15 @@
-import React, {ChangeEvent, KeyboardEvent, useRef, useState} from "react";
-import "./style.css";
+import '@/views/Authentication/style.css';
+import { ChangeEvent, KeyboardEvent, useRef, useState } from "react";
+import { useCookies } from "react-cookie";
+import { Address, useDaumPostcodePopup } from "react-daum-postcode";
+import { useNavigate } from "react-router-dom";
+import { signInRequest, signUpRequest } from "../../apis";
+import { SignInRequestDto, SignUpRequestDto } from "../../apis/request/auth";
+import { ResponseDto } from "../../apis/response";
+import { SignInResponseDto, SignUpResponseDto } from "../../apis/response/auth";
 import InputBox from "../../components/InputBox";
-import {signInRequest, signUpRequest} from "../../apis";
-import {SignInResponseDto, SignUpResponseDto} from "../../apis/response/auth";
-import {ResponseDto} from "../../apis/response";
-import {useCookies} from "react-cookie";
-import {MAIN_PATH} from "../../constant";
-import {useNavigate} from "react-router-dom";
-import {SignInRequestDto, SignUpRequestDto} from "../../apis/request/auth";
-import {Address, useDaumPostcodePopup} from "react-daum-postcode";
-import {useLoginUserStore} from "../../stores";
+import { MAIN_PATH } from "../../constant";
+import { useLoginUserStore } from "../../stores";
 
 // component: 인증 화면 컴포넌트
 export default function Authentication() {

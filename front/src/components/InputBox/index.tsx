@@ -1,5 +1,5 @@
 import {forwardRef, ChangeEvent, KeyboardEvent} from "react";
-import './style.css';
+import '@/components/InputBox/style.css';
 
 // interface: InputBox Component Properties
 interface Props {

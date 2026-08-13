@@ -2,12 +2,12 @@ import { getBoardRequest } from "@/apis";
 import { ResponseDto } from "@/apis/response";
 import { GetBoardResponseDto } from "@/apis/response/board";
 import { convertUrlsToFile } from "@/utils/convertUrlsToFile";
+import '@/views/Board/Update/style.css';
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate, useParams } from "react-router-dom";
 import { MAIN_PATH } from "../../../constant";
 import { useBoardStore, useLoginUserStore } from "../../../stores";
-import "./style.css";
 
 // component:게시물 수정 화면 컴포넌트
 export default function BoardUpdate() {

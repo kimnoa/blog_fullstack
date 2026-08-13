@@ -3,7 +3,7 @@ import { ChangeEvent, useEffect, useRef, useState } from "react";
 import { useCookies } from "react-cookie";
 import { useNavigate, useParams } from "react-router-dom";
 
-import "./style.css";
+import '@/views/User/style.css';
 
 // hook
 import usePagination from "@/hooks/pagination.hook";

@@ -26,8 +26,11 @@ services:
       retries: 10
 
   app:
-    build: .
-    container_name: springboot
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+
+    container_name: backend-container
 
     restart: unless-stopped
 
@@ -38,10 +41,22 @@ services:
       mysql:
         condition: service_healthy
 
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/board?serverTimezone=UTC&characterEncoding=UTF-8
-      SPRING_DATASOURCE_USERNAME: spring
-      SPRING_DATASOURCE_PASSWORD: spring1234
+    # environment:
+    #   SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
+    #   SPRING_DATASOURCE_USERNAME: cmnUser
+    #   SPRING_DATASOURCE_PASSWORD: spring1234
+
+  web:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+
+    container_name: frontend-container
+
+    ports:
+      - "80:80"
+
+    restart: unless-stopped
 
 volumes:
   mysql-data:

@@ -1,9 +1,9 @@
-import React, {ChangeEvent, useEffect, useRef, useState} from "react";
-import "./style.css";
-import {useBoardStore, useLoginUserStore} from "../../../stores";
-import {useNavigate} from "react-router-dom";
-import {MAIN_PATH} from "../../../constant";
-import {useCookies} from "react-cookie";
+import '@/views/Board/Write/style.css';
+import { ChangeEvent, useEffect, useRef, useState } from "react";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
+import { MAIN_PATH } from "../../../constant";
+import { useBoardStore, useLoginUserStore } from "../../../stores";
 
 // component:게시물 작성 w 화면 컴포넌트
 export default function BoardWrite() {

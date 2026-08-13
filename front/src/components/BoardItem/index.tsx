@@ -1,4 +1,4 @@
-import '.';
+import "@/components/BoardItem/style.css";
 import { BoardListItem } from "../../types/interface";
 
 interface Props {
@@ -30,7 +30,7 @@ export default function BoardListItemFunc({boardListItem, onClick}: Props) {
             <div className='board-list-item-main-box'>
                 <div className='board-list-item-top'>
                     <div className='board-list-item-profile-box'>
-                        <div className='board-list-item-profile-image' style={{backgroundImage: `url(${writeProfileImage ? writeProfileImage : "/image/default-profile-image.png"})`}}></div>
+                        <div className='board-list-item-profile-image' style={{backgroundImage: `url(${writeProfileImage ? writeProfileImage : "@/assets/image/default-profile-image.png"})`}}></div>
 
                     </div>
                     <div className='board-list-item-write-box'>

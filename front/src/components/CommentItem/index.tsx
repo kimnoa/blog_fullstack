@@ -1,7 +1,7 @@
 import defaultProfileImage from "@/assets/image/default-profile-image.png";
+import '@/components/CommentItem/style.css';
 import dayjs from "dayjs";
 import { CommentListItem } from "../../types/interface";
-import './style.css';
 
 interface Props {
     commentListItem: CommentListItem;

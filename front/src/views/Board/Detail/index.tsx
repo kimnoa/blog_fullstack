@@ -1,9 +1,9 @@
+import '@/views/Board/Detail/style.css';
 import { ChangeEvent, useEffect, useRef, useState } from "react";
 import CommentItem from "../../../components/CommentItem";
 import FavoriteItem from "../../../components/FavoriteItem";
 import Pagination from "../../../components/Pagination/assets";
 import { CommentListItem, FavoriteListItem } from "../../../types/interface";
-import "./style.css";
 
 import defaultProfileImage from "@/assets/image/default-profile-image.png";
 import { useNavigate, useParams } from "react-router-dom";

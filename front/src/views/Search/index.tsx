@@ -7,9 +7,9 @@ import Pagination from "@/components/Pagination/assets";
 import { SEARCH_PATH } from "@/constant";
 import { usePagination } from "@/hooks";
 import { BoardListItem } from "@/types/interface";
+import '@/views/Search/style.css';
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import "./style.css";
 
 // component: 게시물 검색 화면 컴포넌트
 export default function Search() {
