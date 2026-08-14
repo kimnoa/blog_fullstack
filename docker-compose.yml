@@ -13,17 +13,20 @@ services:
       MYSQL_USER: cmnUser
       MYSQL_PASSWORD: spring1234
 
-    ports:
-      - "3306:3306"
+    # ports:
+    #   - "3306:3306"
 
     volumes:
-      - mysql-data:/var/lib/mysql
+      - ./sql-files:/docker-entrypoint-initdb.d
 
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-proot1234"]
       interval: 10s
       timeout: 5s
       retries: 10
+
+    networks:
+      - webnet
 
   app:
     build:
@@ -34,12 +37,17 @@ services:
 
     restart: unless-stopped
 
-    ports:
-      - "8080:8080"
+    # ports:
+    #   - "8080:8080"
+    expose:
+      - "8080"
 
     depends_on:
       mysql:
         condition: service_healthy
+
+    networks:
+      - webnet
 
     # environment:
     #   SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
@@ -56,7 +64,17 @@ services:
     ports:
       - "80:80"
 
+    depends_on:
+      - app
+
     restart: unless-stopped
+
+    networks:
+      - webnet
 
 volumes:
   mysql-data:
+
+networks:
+  webnet:
+    driver: bridge
