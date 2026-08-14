@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class CommentListItem {
     private String nickname;
     private String profileImage;
     private String content;
-    private String writeDatetime;
+    private LocalDateTime writeDatetime;
 
     public CommentListItem(GetCommentListResultSet resultSet) {
         this.nickname = resultSet.getNickname();

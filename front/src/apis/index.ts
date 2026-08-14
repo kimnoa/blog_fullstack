@@ -1,31 +1,31 @@
-import {SignInRequestDto, SignUpRequestDto} from "./request/auth";
 import axios from "axios";
-import {SignInResponseDto, SignUpResponseDto} from "./response/auth";
-import {ResponseDto} from "./response";
-import {GetSignInUserResponseDto, GetUserResponseDto, PatchNicknameResponseDto, PatchProfileImageResponseDto} from "./response/user";
-import {Simulate} from "react-dom/test-utils";
-import error = Simulate.error;
-import {PostBoardRequestDto, PostCommentRequestDto} from "./request/board";
-import {
-    PostBoardResponseDto,
-    GetBoardResponseDto,
-    IncreaseViewCountResponseDto,
-    GetFavoriteListResponseDto,
-    GetCommentListResponseDto,
-    PutFavoriteResponseDto,
-    PostCommentResponseDto,
-    DeleteBoardResponseDto,
-    PatchBoardResponseDto,
-    GetLatestBoardListResponseDto,
-    GetTop3BoardListResponseDto,
-    GetSearchBoardListResponseDto,
-    GetUserBoardListResponseDto
-} from "./response/board";
+import { Simulate } from "react-dom/test-utils";
+import { SignInRequestDto, SignUpRequestDto } from "./request/auth";
+import { PostBoardRequestDto, PostCommentRequestDto } from "./request/board";
 import PatchBoardRequestDto from "./request/board/patch-board.request.dto";
-import { GetPopularListResponseDto, GetRelationListResponseDto } from "./response/search";
 import { PatchNicknameRequestDto, PatchProfileImageRequestDto } from "./request/user";
+import { ResponseDto } from "./response";
+import { SignInResponseDto, SignUpResponseDto } from "./response/auth";
+import {
+    DeleteBoardResponseDto,
+    GetBoardResponseDto,
+    GetCommentListResponseDto,
+    GetFavoriteListResponseDto,
+    GetLatestBoardListResponseDto,
+    GetSearchBoardListResponseDto,
+    GetTop3BoardListResponseDto,
+    GetUserBoardListResponseDto,
+    IncreaseViewCountResponseDto,
+    PatchBoardResponseDto,
+    PostBoardResponseDto,
+    PostCommentResponseDto,
+    PutFavoriteResponseDto
+} from "./response/board";
+import { GetPopularListResponseDto, GetRelationListResponseDto } from "./response/search";
+import { GetSignInUserResponseDto, GetUserResponseDto, PatchNicknameResponseDto, PatchProfileImageResponseDto } from "./response/user";
+import error = Simulate.error;
 
-const DOMAIN = "http://localhost:4000";
+const DOMAIN = ""; // http://localhost:4000 제거
 
 const API_DOMAIN = `${DOMAIN}/api/v1`;
 

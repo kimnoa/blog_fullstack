@@ -1,15 +1,18 @@
 package com.timeblock.myblog.entity;
 
-import com.timeblock.myblog.dto.request.board.PostBoardRequestDto;
+import java.time.LocalDateTime;
+
 import com.timeblock.myblog.dto.request.board.PatchBoardRequestDto;
-import jakarta.persistence.*;
+import com.timeblock.myblog.dto.request.board.PostBoardRequestDto;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.util.Date;
 
 @Getter
 @NoArgsConstructor
@@ -23,7 +26,7 @@ public class BoardEntity {
     private int boardNumber;
     private String title;
     private String content;
-    private String writeDatetime;
+    private LocalDateTime writeDatetime;
     private int favoriteCount;
     private int commentCount;
     private int viewCount;
@@ -31,13 +34,13 @@ public class BoardEntity {
 
     public BoardEntity(PostBoardRequestDto dto, String email) {
 
-        Date now = Date.from(Instant.now());
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String writeDatetime = simpleDateFormat.format(now);
+        // Date now = Date.from(Instant.now());
+        // SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        // String writeDatetime = simpleDateFormat.format(now);
 
         this.title = dto.getTitle();
         this.content = dto.getContent();
-        this.writeDatetime = writeDatetime;
+        this.writeDatetime = LocalDateTime.now();
         this.favoriteCount = 0;
         this.commentCount = 0;
         this.viewCount = 0;

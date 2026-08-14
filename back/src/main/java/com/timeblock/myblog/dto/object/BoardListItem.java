@@ -1,5 +1,6 @@
 package com.timeblock.myblog.dto.object;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +21,8 @@ public class BoardListItem {
     private int favoriteCount;
     private int commentCount;
     private int viewCount;
-    private String writeDatetime;
+    // private String writeDatetime;
+    private LocalDateTime writeDatetime;
     private String writerNickname;
     private String writerProfileImage;
 

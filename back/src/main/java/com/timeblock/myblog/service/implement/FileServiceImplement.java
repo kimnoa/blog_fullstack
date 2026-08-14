@@ -1,27 +1,29 @@
 package com.timeblock.myblog.service.implement;
 
-import com.timeblock.myblog.service.FileService;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.Resource;
-import org.springframework.core.io.UrlResource;
-import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-import jakarta.annotation.PostConstruct;
-
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.UUID;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.timeblock.myblog.service.FileService;
+
+import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
+
 @Service
 @Slf4j
 public class FileServiceImplement implements FileService {
 
-    @Value("${file.path:fileUploads}")
+    @Value("${file.path:/fileUploads/}")
     private String filePath;
-    @Value("${file.url:http://localhost:4000/file/}")
+    @Value("${file.url:http://app/upload/}") //localhost에서 교체
     private String fileUrl;
 
     // 애플리케이션 시작 시 파일 디렉토리 생성
@@ -39,6 +41,7 @@ public class FileServiceImplement implements FileService {
             }
             
             Path uploadPath = Paths.get(myblogPath, filePath).toAbsolutePath().normalize();
+            System.out.println(uploadPath);
         
             // 디렉토리가 존재하지 않으면 생성
             if (!Files.exists(uploadPath)) {

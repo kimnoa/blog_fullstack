@@ -1,32 +1,49 @@
 package com.timeblock.myblog.service.implement;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
 import com.timeblock.myblog.dto.request.board.PatchBoardRequestDto;
 import com.timeblock.myblog.dto.request.board.PostBoardRequestDto;
 import com.timeblock.myblog.dto.request.board.PostCommentRequestDto;
 import com.timeblock.myblog.dto.response.ResponseDto;
-import com.timeblock.myblog.dto.response.board.*;
+import com.timeblock.myblog.dto.response.board.DeleteBoardResponseDto;
+import com.timeblock.myblog.dto.response.board.GetBoardResponseDto;
+import com.timeblock.myblog.dto.response.board.GetCommentListResponseDto;
+import com.timeblock.myblog.dto.response.board.GetFavoriteListResponseDto;
+import com.timeblock.myblog.dto.response.board.GetLatestBoardListResponseDto;
+import com.timeblock.myblog.dto.response.board.GetSearchBoardListResponseDto;
+import com.timeblock.myblog.dto.response.board.GetTop3BoardListResponseDto;
+import com.timeblock.myblog.dto.response.board.GetUserBoardListResponseDto;
+import com.timeblock.myblog.dto.response.board.IncreaseViewCountResponseDto;
+import com.timeblock.myblog.dto.response.board.PatchBoardResponseDto;
+import com.timeblock.myblog.dto.response.board.PostBoardResponseDto;
+import com.timeblock.myblog.dto.response.board.PostCommentResponseDto;
+import com.timeblock.myblog.dto.response.board.PutFavoriteResponseDto;
 import com.timeblock.myblog.entity.BoardEntity;
 import com.timeblock.myblog.entity.BoardListViewEntity;
 import com.timeblock.myblog.entity.CommentEntity;
 import com.timeblock.myblog.entity.FavoriteEntity;
 import com.timeblock.myblog.entity.ImageEntity;
 import com.timeblock.myblog.entity.SearchLogEntity;
-import com.timeblock.myblog.repository.*;
+import com.timeblock.myblog.repository.BoardListViewRepository;
+import com.timeblock.myblog.repository.BoardRepository;
+import com.timeblock.myblog.repository.CommentRepository;
+import com.timeblock.myblog.repository.FavoriteRepository;
+import com.timeblock.myblog.repository.ImageRepository;
+import com.timeblock.myblog.repository.SearchLogRepository;
+import com.timeblock.myblog.repository.UserRepository;
 import com.timeblock.myblog.repository.resultSet.GetBoardResultSet;
 import com.timeblock.myblog.repository.resultSet.GetCommentListResultSet;
 import com.timeblock.myblog.repository.resultSet.GetFavoriteListResultSet;
 import com.timeblock.myblog.service.BoardService;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-
-import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -113,11 +130,11 @@ public class BoardServiceImplement implements BoardService {
 
         try {
             // 7일 전 날짜 구하기
-            Date beforeWeek = Date.from(Instant.now().minus(7, ChronoUnit.DAYS));
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            String formattedDate = dateFormat.format(beforeWeek);
+            LocalDateTime beforeWeek = LocalDateTime.now().minusDays(7);
+            // SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            // String formattedDate = dateFormat.format(beforeWeek);
             
-            boardListViewEntities = boardListViewRepository.findTop3ByWriteDatetimeGreaterThanOrderByFavoriteCountDescViewCountDescCommentCountDescWriteDatetimeDesc(formattedDate);
+            boardListViewEntities = boardListViewRepository.findTop3ByWriteDatetimeGreaterThanOrderByFavoriteCountDescViewCountDescCommentCountDescWriteDatetimeDesc(beforeWeek);
 
         } catch (Exception exception){
             log.error(exception.getMessage());

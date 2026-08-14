@@ -8,6 +8,7 @@ import com.timeblock.myblog.repository.resultSet.GetBoardResultSet;
 import lombok.Getter;
 import org.springframework.http.ResponseEntity;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class GetBoardResponseDto extends ResponseDto {
     private String title;
     private String content;
     private List<String> boardImageList;
-    private String writeDatetime;
+    private LocalDateTime writeDatetime;
     private String email;
     private String nickname;
     private String profileImage;
