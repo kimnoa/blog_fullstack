@@ -135,6 +135,8 @@
     display: grid;
 
     grid-template-columns: 8fr 4fr;
+
+    column-gap: 10px;
 }
 
 .user-bottom-contents {
@@ -142,6 +144,10 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+.user-bottom-contents:hover {
+    cursor: pointer;
 }
 
 .user-bottom-contents-nothing {
@@ -168,7 +174,8 @@
 }
 
 .user-bottom-side-card:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    
 }
 
 .user-bottom-side-container {

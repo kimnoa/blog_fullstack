@@ -32,7 +32,7 @@ import {
 } from "@/apis/response/user";
 
 // const and enum
-import { BOARD_PATH, BOARD_WRITE_PATH, MAIN_PATH, USER_PATH } from "@/constant";
+import { BOARD_DETAIL_PATH, BOARD_PATH, BOARD_WRITE_PATH, MAIN_PATH, USER_PATH } from "@/constant";
 
 // interface
 import { BoardListItem } from "@/types/interface";
@@ -268,10 +268,16 @@ export default function UserPage() {
             setPostListCount(userBoardList.length);
         }
 
+        // event handler: 게시물 클릭 이벤트 처리 //
+        const onBoardClickHandler = (boardNumber: number) => {
+            navigate(BOARD_PATH() + '/' + BOARD_DETAIL_PATH(boardNumber));
+        }
+
         // event handler: 사이드 카드 클릭 이벤트 처리 //
         const onSideCardClickHandler = () => {
             if (isMyPage) navigate(BOARD_PATH() + '/' + BOARD_WRITE_PATH());
             else if (loginUser) navigate(USER_PATH(loginUser.email));
+            else navigate(MAIN_PATH());
         }
 
 
@@ -296,7 +302,7 @@ export default function UserPage() {
                         {postListCount === 0 ?
                         <div className="user-bottom-contents-nothing">{'게시물이 없습니다'}</div>
                         : <div className="user-bottom-contents">
-                            {viewList.map(boardListItem=><BoardItem boardListItem={boardListItem} key={boardListItem.boardNumber} />)}
+                            {viewList.map(boardListItem=><BoardItem boardListItem={boardListItem} key={boardListItem.boardNumber} onClick = {() => onBoardClickHandler(boardListItem.boardNumber)} />)}
                         </div>
                         }
                         <div className="user-bottom-side box">
@@ -309,11 +315,18 @@ export default function UserPage() {
                                     </div>
                                     <div className="user-bottom-side-text">{'글쓰기'}</div>
                                     </>
-                                    : <>
-                                    <div className="user-bottom-side-text">{'내 게시물로 이동'}</div>
+                                    : 
+                                    loginUser?
+                                    <>
+                                    <div className="user-bottom-side-text">{'내 프로필로 이동'}</div>
                                     <div className="icon-box">
-                                    <div className="icon arrow-right-icon"></div>
+                                        <div className="icon arrow-right-icon">
                                     </div>
+                                    </div>
+                                    </>
+                                    :
+                                    <>
+                                    <div className="user-bottom-side-text">{'메인 화면으로 이동'}</div>
                                     </>
                                     }
 

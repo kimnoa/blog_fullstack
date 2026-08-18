@@ -1,13 +1,21 @@
-version: "1.0"
+# version: "1.0"
 
 services:
   mysql:
-    image: mysql:latest
+    build:
+      context: ./mysql
+      dockerfile: Dockerfile
+
     container_name: mysql-container
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --default-time-zone=+09:00
 
     restart: unless-stopped
 
     environment:
+      TZ: Asia/Seoul
       MYSQL_ROOT_PASSWORD: root1234
       MYSQL_DATABASE: mydb
       MYSQL_USER: cmnUser
@@ -17,7 +25,9 @@ services:
     #   - "3306:3306"
 
     volumes:
+      - mysql-data:/var/lib/mysql
       - ./sql-files:/docker-entrypoint-initdb.d
+      - ./mysql/char.cnf:/etc/mysql/conf.d/char.cnf:ro
 
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-proot1234"]
@@ -28,9 +38,6 @@ services:
     networks:
       - webnet
 
-    command:
-      - --character-set-server=utf8mb4
-      - --collation-server=utf8mb4_unicode_ci
 
   app:
     build:
@@ -41,20 +48,23 @@ services:
 
     restart: unless-stopped
 
-    # ports:
-    #   - "8080:8080"
-    expose:
-      - "8080"
+    ports:
+      - "8080:8080"
+    # expose:
+      # - "8080"
 
     depends_on:
       mysql:
         condition: service_healthy
 
+    volumes:
+      - ./data/images:/app/images
+
     networks:
       - webnet
 
-    # environment:
-    #   SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/mydb?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
     #   SPRING_DATASOURCE_USERNAME: cmnUser
     #   SPRING_DATASOURCE_PASSWORD: spring1234
 
