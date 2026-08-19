@@ -1,31 +1,34 @@
 import asyncio
 from crawl4ai import *
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
+from crawlAgent import CrawlAgent
 import time
 
-urlText = "https://www.aitimes.com/"
+# defaultUrl = "https://www.aitimes.com/"
+# https://www.sciencetimes.co.kr/
 
 app = FastAPI()
-
-async def crawler_agent(urlText:str):
-    async with AsyncWebCrawler() as crawler:
-        # crawler_config = CrawlerRunConfig()
-        result = await crawler.arun(
-            url=urlText,
-        )
-        time.sleep(10)
-        print(result.markdown)
 
 
 @app.get("/")
 def read():
-    return {"id" : "10"}
+    print("check")
+    return {"result" : "200"}
+    
 
-@app.get("/url/{url_name}")
-def find_data(url_name:str)->None:
-    urlText = url_name or "Input here"
-    crawler_agent(urlText) #TODO
+@app.get("/url/{url_name:path}")
+def find_data(url_name:str, response:Response):
+    if not url_name.startswith(("https://","http://")):
+        response.status_code = 400
+        print("ERROR: URL must start with 'http://' or 'https://'")
+        return {
+            "error": "URL must start with 'http://' or 'https://'"
+        }
+    print("check URL:", url_name)
+    # asyncio.run(CrawlAgent.crawler_agent(url_name)) #TODO
+    asyncio.run(CrawlAgent.deepCrawling(url_name))
 
-
-if __name__ == "__main__":
-    asyncio.run(crawler_agent(urlText))
+    return {
+        "result": "SU",
+        "url" : url_name
+    }
