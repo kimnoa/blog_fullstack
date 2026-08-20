@@ -1,0 +1,2722 @@
+{
+  "crawled_urls": [
+    "https://realpython.com/"
+  ],
+  "knowledge_base": [
+    {
+      "url": "https://realpython.com/",
+      "content": "[ ![Real Python](https://realpython.com/static/real-python-logo.893c30edea53.svg) ](https://realpython.com/)\n  * [Start Here](https://realpython.com/start-here/)\n  * [ Learn Python ](https://realpython.com/#)\n###### Start Learning\n[Your Learning Plan \u2192Your personalized Python learning plan](https://realpython.com/account/learning-plan/) [Python Tutorials \u2192In-depth articles and video courses](https://realpython.com/search?kind=article&kind=course&order=newest) [Learning Paths \u2192Guided study plans for accelerated learning](https://realpython.com/learning-paths/)\n###### Practice\n[Quizzes & Exercises \u2192Check your learning progress](https://realpython.com/search?kind=exercise&kind=quiz) [Browse Topics \u2192Focus on a specific area or skill level](https://realpython.com/tutorials/all/) [Reference \u2192Concise definitions for common Python terms](https://realpython.com/ref/)\n###### Get Help\n[Code Mentor \u2192BetaPersonalized code assistance & learning tools](https://realpython.com/mentor/) [Office Hours \u2192Live Q&A calls with Python experts](https://realpython.com/office-hours/) [Community Chat \u2192Learn with other Pythonistas](https://realpython.com/community/)\n###### Go Deeper\n[Live Courses \u2192Live, instructor-led Python courses](https://realpython.com/live/) [Books \u2192Round out your knowledge and learn offline](https://realpython.com/products/books/) [Podcast \u2192Hear what\u2019s new in the world of Python](https://realpython.com/podcasts/rpp/)\n[Unlock All Content and Become a Python Expert \u2192Get unlimited access to all Real Python has to offer](https://realpython.com/account/join/?from=navbar_learn)\n[Unlock All Content \u2192Become a Python Expert](https://realpython.com/account/join/?from=navbar_learn)\n  * [ More ](https://realpython.com/#)\n[Learner Stories](https://realpython.com/learner-stories/) [Python Newsletter](https://realpython.com/newsletter/) [Python Job Board](https://www.pythonjobshq.com) [Meet the Team](https://realpython.com/team/) [Become a Contributor](https://realpython.com/jobs/)\n\n\n  * [ Search](https://realpython.com/search \"Search\")\n\n\n[](https://realpython.com/search \"Search\") /\n  * [Join](https://realpython.com/account/join/)\n  * [Sign\u2011In](https://realpython.com/account/login/?intent=navbar&next=%2F)\n\n\n[ ![A person arranging plan cards on a drafting table beside a machine with BUILD, DEBUG, and EXTEND panels, a Claude Code console, a project folder holding a pixel-art bug, and a Python chip.](https://files.realpython.com/media/How-to-Use-Claude-Code-Your-Terminal-AI-Coding-Assistant_Watermarked.2916c96a3049.jpg) NEW ](https://realpython.com/how-to-use-claude-code/)\n## [How to Use Claude Code to Write and Debug Python ](https://realpython.com/how-to-use-claude-code/)\nLearn how to use Claude Code to build and debug Python projects with natural-language commands right from your terminal.\nAug 19, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [ai](https://realpython.com/tutorials/ai/) [tools](https://realpython.com/tutorials/tools/)\n## [Podcasts](https://realpython.com/podcasts/rpp/)\n[View All \u00bb](https://realpython.com/podcasts/rpp/)\nThe Real Python Podcast\n#307: Improving NumPy Performance on Free-Threaded Python\n1.0x\nloading 00:0046:12\nlive\n  1. 00:00\nIntroduction\n  2. 02:26\nPython 3.15.0 candidate 1 is here!\n  3. 02:47\nPython 3.14.7 and 3.13.15 are now available!\n  4. 03:00\nDjango 6.1 released\n  5. 03:39\nPlanned Updates to the PyPI User Interface\n  6. 04:13\nPyPI Releases Now Reject New Files After 14 Days\n  7. 05:07\nPEP 837 \u2013 Extensible JSON serialization\n  8. 06:20\nPEP 842: Module Exports\n  9. 07:51\nIntroducing `django-crawl`\n  10. 12:02\nSIMD in Pure Python\n  11. 18:29\nManaging Imports With Python's `__all__`\n  12. 29:34\nSpotlight: Modern Object-Oriented Python Book\n  13. 30:53\nScaling NumPy on Free-Threaded Python\n  14. 37:53\ncnsplots: Python Data Visualization for Complex Datasets\n  15. 42:19\ndjango-orm-lens: Django Schema Review\n  16. 45:14\nThanks and goodbye\n\n\n\u2014 FREE Email Series \u2014\n\ud83d\udc0d Python Tricks \ud83d\udc8c\n![Python Tricks Dictionary Merge](https://realpython.com/static/pytrick-dict-merge.4201a0125a5e.png)\nGet Python Tricks \u00bb\n\ud83d\udd12 No spam. Unsubscribe any time.\n[Browse Topics](https://realpython.com/tutorials/all/) [Guided Learning Paths](https://realpython.com/learning-paths/)   \n[ Basics](https://realpython.com/search?level=basics) [ Intermediate](https://realpython.com/search?level=intermediate) [ Advanced](https://realpython.com/search?level=advanced)\n* * *\n[ai](https://realpython.com/tutorials/ai/) [algorithms](https://realpython.com/tutorials/algorithms/) [api](https://realpython.com/tutorials/api/) [best-practices](https://realpython.com/tutorials/best-practices/) [career](https://realpython.com/tutorials/career/) [community](https://realpython.com/tutorials/community/) [databases](https://realpython.com/tutorials/databases/) [data-science](https://realpython.com/tutorials/data-science/) [data-structures](https://realpython.com/tutorials/data-structures/) [data-viz](https://realpython.com/tutorials/data-viz/) [devops](https://realpython.com/tutorials/devops/) [django](https://realpython.com/tutorials/django/) [docker](https://realpython.com/tutorials/docker/) [editors](https://realpython.com/tutorials/editors/) [flask](https://realpython.com/tutorials/flask/) [front-end](https://realpython.com/tutorials/front-end/) [gamedev](https://realpython.com/tutorials/gamedev/) [gui](https://realpython.com/tutorials/gui/) [machine-learning](https://realpython.com/tutorials/machine-learning/) [news](https://realpython.com/tutorials/news/) [numpy](https://realpython.com/tutorials/numpy/) [projects](https://realpython.com/tutorials/projects/) [python](https://realpython.com/tutorials/python/) [stdlib](https://realpython.com/tutorials/stdlib/) [testing](https://realpython.com/tutorials/testing/) [tools](https://realpython.com/tutorials/tools/) [web-dev](https://realpython.com/tutorials/web-dev/) [web-scraping](https://realpython.com/tutorials/web-scraping/)\n## Explore Real Python\n[ Your Learning Plan   \nCreate a custom learning plan tailored to you ](https://realpython.com/account/signup/?next=%2Faccount%2Flearning-plan%2F&intent=learning_plan)\n[ Python Tutorials   \nIn-depth articles and step-by-step video courses ](https://realpython.com/search?kind=article&kind=course&order=newest)\n[ Learning Paths   \nGuided study plans for accelerated learning ](https://realpython.com/learning-paths/)\n[ Quizzes & Exercises   \nPractice and evaluate your Python knowledge ](https://realpython.com/search?kind=exercise&kind=quiz)\n[ Browse Topics   \nFocus on a specific area or skill level ](https://realpython.com/tutorials/all/)\n[ Reference   \nConcise definitions for common Python terms ](https://realpython.com/ref/)\n[ Code Mentor Beta   \nIntelligent learning tools & personalized assistance ](https://realpython.com/mentor/)\n[ Office Hours   \nLive Q&A calls with experts from Real Python ](https://realpython.com/office-hours/)\n[ Community Chat   \nLearn with other Pythonistas ](https://realpython.com/community/)\n[ Live Courses   \nTransform your skills with expert guidance ](https://realpython.com/live/)\n[ Books   \nRound out your knowledge and learn offline ](https://realpython.com/products/books/)\n[ Podcast   \nHear what\u2019s new in the world of Python ](https://realpython.com/podcasts/rpp/)\n[](https://realpython.com/search \"Search\") Search \u00bb\n## [New Releases](https://realpython.com/search?order=newest)\n[View All \u00bb](https://realpython.com/search?order=newest)\n[ ![Python's deque: Implement Efficient Queues and Stacks](https://files.realpython.com/media/Collections.deque_Watermarked.066fbf353cb4.jpg) ](https://realpython.com/courses/working-with-pythons-deque/)\n## [Working With Python's deque ](https://realpython.com/courses/working-with-pythons-deque/)\nAug 18, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [data-structures](https://realpython.com/tutorials/data-structures/) [python](https://realpython.com/tutorials/python/) [stdlib](https://realpython.com/tutorials/stdlib/)\n[ ![A robot points and says Bug Found beside panels labeled AI Agent, Debug, and Verify, a code screen, a meter of happy-to-sad faces, a Python logo chip, and a green bug creature in a glass case.](https://files.realpython.com/media/How-to-Debug-Python-Code-With-an-AI-Agent_Watermarked.44341c4ae7ec.jpg) ](https://realpython.com/ai-debugging/)\n## [How to Debug Python Code With an AI Agent ](https://realpython.com/ai-debugging/)\nAug 17, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [ai](https://realpython.com/tutorials/ai/) [tools](https://realpython.com/tutorials/tools/)\n[ ![A person wearing headphones points at a mission-control console with a radar graph, gauges labeled Latency, a Traces and Logs panel, a Python logo, and a green Status OK screen.](https://files.realpython.com/media/How-to-Integrate-OpenTelemetry-With-FastAPI-App_Watermarked.750b03bc7c47.jpg) ](https://realpython.com/fastapi-opentelemetry/)\n## [How to Integrate OpenTelemetry With a FastAPI App ](https://realpython.com/fastapi-opentelemetry/)\nAug 12, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [devops](https://realpython.com/tutorials/devops/) [web-dev](https://realpython.com/tutorials/web-dev/)\n[ ![A person in a hard hat and safety goggles with a clipboard stands beside a wall of panels labeled OpenCode, Analyze, Refactor, AI Models, Python Projects, LSP, Git UI, and Modes \\(Plan/Build\\).](https://files.realpython.com/media/How-to-Use-OpenCode-for-AI-Assisted-Engineering_Watermarked.737726d966fd.jpg) ](https://realpython.com/courses/coding-with-opencode-ai/)\n## [Coding With OpenCode: AI-Assisted Python ](https://realpython.com/courses/coding-with-opencode-ai/)\nAug 11, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [ai](https://realpython.com/tutorials/ai/) [python](https://realpython.com/tutorials/python/) [tools](https://realpython.com/tutorials/tools/)\n[ ![Qt Designer and Python: Build Your GUI Applications Faster](https://files.realpython.com/media/Creating-Python-GUI-Applications-with-Qt-Designer_Watermarked.a557daee0374.jpg) ](https://realpython.com/qt-designer-python/)\n## [Qt Designer and Python: Build Your GUI Applications Faster ](https://realpython.com/qt-designer-python/)\nAug 10, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [gui](https://realpython.com/tutorials/gui/)\n[ ![A worker kneels at a Python-branded validation machine labeled VALIDATING, sorting boxes from a conveyor belt into two stacks marked PASS and REVIEW alongside wooden crates.](https://files.realpython.com/media/Validating-Data-with-Pointblank-in-Python_Watermarked.e361acd055a3.jpg) ](https://realpython.com/python-pointblank/)\n## [Validating Data With Pointblank in Python ](https://realpython.com/python-pointblank/)\nAug 05, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [best-practices](https://realpython.com/tutorials/best-practices/) [data-science](https://realpython.com/tutorials/data-science/)\n[Remove ads](https://realpython.com/account/join/)\n[ ![Sending Emails With Python](https://files.realpython.com/media/UPDATE-Sending-Emails-With-Python_Watermarked.d82e038c1c1c.jpg) ](https://realpython.com/courses/sending-emails-using-python/)\n## [Sending Emails Using Python ](https://realpython.com/courses/sending-emails-using-python/)\nAug 04, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [web-dev](https://realpython.com/tutorials/web-dev/)\n[ ![Python Monthly News](https://files.realpython.com/media/Monthly-Python-News_Red_Watermarked.c82fffdbc32e.jpg) ](https://realpython.com/python-news-august-2026/)\n## [MCP Gets Its Biggest Rewrite and Other Python News for August 2026 ](https://realpython.com/python-news-august-2026/)\nAug 03, 2026 [community](https://realpython.com/tutorials/community/) [news](https://realpython.com/tutorials/news/)\n[ ![Coordinating Teams of AI Agents with CrewAI in Python](https://files.realpython.com/media/Coordinating-Teams-of-AI-Agents-with-CrewAI-in-Python_Watermarked.d44efee0c44f.jpg) ](https://realpython.com/crewai-python/)\n## [CrewAI in Python: Coordinating Teams of AI Agents ](https://realpython.com/crewai-python/)\nJul 29, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [ai](https://realpython.com/tutorials/ai/)\n[ ![Python's __all__: Packages, Modules, and Wildcard Imports](https://files.realpython.com/media/Pythons-__all__-Set-Up-Your-Packages-and-Modules-for-Wildcard-Imports_Watermarked.698d61e0300d.jpg) ](https://realpython.com/courses/managing-imports-dunder-all/)\n## [Managing Imports With Python's __all__ ](https://realpython.com/courses/managing-imports-dunder-all/)\nJul 28, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [python](https://realpython.com/tutorials/python/)\n[ ![A floating scientist in a lab coat operates a control panel with a lever, a terminal screen reading prompt, a Python logo, and drawers labeled FLOW, DATA, and LOGS, beside a waving robot.](https://files.realpython.com/media/Use-Antigravity-CLI-for-Code-Assistance_Watermarked.5eb983b3713c.jpg) ](https://realpython.com/antigravity-cli/)\n## [How to Use Google's Antigravity CLI for AI Code Assistance ](https://realpython.com/antigravity-cli/)\nJul 27, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [ai](https://realpython.com/tutorials/ai/) [tools](https://realpython.com/tutorials/tools/)\n[ ![A person triumphantly raises a key in front of a vault labeled pylock.toml, with a rack of colored keys, wooden crates marked with hashes, and a Python chip alongside.](https://files.realpython.com/media/Manage-Dependencies-with-Pythons-pylock.toml-Lock-File_Watermarked.94f86fd67ee8.jpg) ](https://realpython.com/python-lock-file-pylock-toml/)\n## [Tool-Agnostic Python Lock Files With PEP 751 and pylock.toml ](https://realpython.com/python-lock-file-pylock-toml/)\nJul 22, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [tools](https://realpython.com/tutorials/tools/)\n[ ![Python's Built-in Functions: A Complete Exploration](https://files.realpython.com/media/Pythons-Built-in-Functions-A-Quick-Exploration_Watermarked.44a8e102943b.jpg) ](https://realpython.com/courses/exploring-pythons-built-in-functions/)\n## [Exploring Python's Built-in Functions ](https://realpython.com/courses/exploring-pythons-built-in-functions/)\nJul 21, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [python](https://realpython.com/tutorials/python/)\n[ ![Using NumPy reshape\\(\\) to Change the Shape of an Array](https://files.realpython.com/media/How-to-Use-NumPys-reshape_Watermarked.88dac560fd74.jpg) ](https://realpython.com/numpy-reshape/)\n## [Using NumPy reshape() to Change the Shape of an Array ](https://realpython.com/numpy-reshape/)\nJul 20, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [data-structures](https://realpython.com/tutorials/data-structures/) [numpy](https://realpython.com/tutorials/numpy/)\n[ ![A person and a robot beside a filing cabinet with drawers labeled GLOBAL, PROJECT, and LOCAL, next to a Python logo, a CLAUDE.md tag, and a screen labeled MEMORY with checklist items.](https://files.realpython.com/media/How-to-Write-a-CLAUDE.md-File-for-Claude-Code_Watermarked.ea7aeffdb75e.jpg) ](https://realpython.com/python-claude-md/)\n## [How to Write a CLAUDE.md File for Claude Code ](https://realpython.com/python-claude-md/)\nJul 15, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [ai](https://realpython.com/tutorials/ai/) [tools](https://realpython.com/tutorials/tools/)\n[ ![What Are Mixin Classes in Python?](https://files.realpython.com/media/Multiple-Inheritance-and-Mixins_Watermarked.1cfef28a6113.jpg) ](https://realpython.com/courses/understanding-mixin-classes-in-python/)\n## [Understanding Mixin Classes in Python ](https://realpython.com/courses/understanding-mixin-classes-in-python/)\nJul 14, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [python](https://realpython.com/tutorials/python/)\n[ ![LangGraph: Build Stateful AI Agents in Python](https://files.realpython.com/media/Showcase-Langgraph_Watermarked.6435fda68bc4.jpg) ](https://realpython.com/langgraph-python/)\n## [LangGraph Tutorial: Build Stateful AI Agents in Python ](https://realpython.com/langgraph-python/)\nJul 13, 2026 [intermediate](https://realpython.com/tutorials/intermediate/) [ai](https://realpython.com/tutorials/ai/) [data-science](https://realpython.com/tutorials/data-science/)\n[ ![How to Use GitHub](https://files.realpython.com/media/How-to-Use-GitHub.2542b35787ba.jpg) ](https://realpython.com/how-to-use-github/)\n## [How to Use GitHub ](https://realpython.com/how-to-use-github/)\nJul 08, 2026 [basics](https://realpython.com/tutorials/basics/) [tools](https://realpython.com/tutorials/tools/)\nLoad More\n[](https://realpython.com/search \"Search\") Search \u00bb\n##### Learn Python\n  * [Start Here](https://realpython.com/start-here/)\n  * [Learning Resources](https://realpython.com/search)\n  * [Code Mentor](https://realpython.com/mentor/)\n  * [Python Reference](https://realpython.com/ref/)\n  * [Python Cheat Sheet](https://realpython.com/cheatsheets/python/)\n  * [Support Center](https://support.realpython.com/)\n\n\n##### Courses & Paths\n  * [Learning Paths](https://realpython.com/learning-paths/)\n  * [Quizzes & Exercises](https://realpython.com/quizzes/)\n  * [Browse Topics](https://realpython.com/tutorials/all/)\n  * [Live Courses](https://realpython.com/live/)\n  * [Books](https://realpython.com/books/)\n\n\n##### Community\n  * [Podcast](https://realpython.com/podcasts/rpp/)\n  * [Newsletter](https://realpython.com/newsletter/)\n  * [Community Chat](https://realpython.com/community/)\n  * [Office Hours](https://realpython.com/office-hours/)\n  * [Learner Stories](https://realpython.com/learner-stories/)\n\n\n##### Membership\n  * [Plans & Pricing](https://realpython.com/account/join/)\n  * [Team Plans](https://realpython.com/account/join-team/)\n  * [For Business](https://realpython.com/account/join-team/inquiry/)\n  * [For Schools](https://realpython.com/account/join-team/education-inquiry/)\n  * [Reviews](https://realpython.com/learner-stories/)\n\n\n##### Company\n  * [About Us](https://realpython.com/about/)\n  * [Team](https://realpython.com/team/)\n  * [Mission & Values](https://realpython.com/mission/)\n  * [Editorial Guidelines](https://realpython.com/editorial-guidelines/)\n  * [Sponsorships](https://realpython.com/sponsorships/)\n  * [Careers](https://realpython.workable.com)\n  * [Press Kit](https://realpython.com/media-kit/)\n  * [Merch](https://realpython.com/merch)\n\n\n[](https://www.youtube.com/realpython \"YouTube\") [](https://x.com/realpython \"X/Twitter\") [](https://www.linkedin.com/company/realpython-com \"LinkedIn\") [](https://www.facebook.com/LearnRealPython \"Facebook\") [](https://github.com/realpython/ \"GitHub\")\n[Privacy Policy](https://realpython.com/privacy-policy/) \u22c5 [Terms of Use](https://realpython.com/terms/) \u22c5 [Security](https://realpython.com/security/) \u22c5 [Contact](https://realpython.com/contact/)\nHappy Pythoning!\n\u00a9 2012\u20132026 DevCademy Media Inc. DBA Real Python. All rights reserved.  \nREALPYTHON\u2122 is a trademark of DevCademy Media Inc.  [ ![Real Python - Online Python Training \\(logo\\)](https://realpython.com/static/real-python-logo-primary.973743b6d39d.svg) ](https://realpython.com/)\nFree Bonus: **Python Cheat Sheet** \u00d7\nGet a **Python Cheat Sheet (PDF)** and learn the basics of Python, like working with data types, dictionaries, lists, and Python functions:\n![Python Cheat Sheet](https://realpython.com/static/cheatsheet-stacked-sm.c9ac81c58bcc.png)\nSend My Python Cheat Sheet \u00bb\n",
+      "links": {
+        "internal": [],
+        "external": [
+          {
+            "href": "https://www.pythonjobshq.com",
+            "text": "Python Job Board",
+            "title": "",
+            "base_domain": "pythonjobshq.com",
+            "head_data": null,
+            "head_extraction_status": null,
+            "head_extraction_error": null,
+            "intrinsic_score": 3.6666666666666665,
+            "contextual_score": null,
+            "total_score": 3.6666666666666665
+          },
+          {
+            "href": "https://realpython.workable.com",
+            "text": "Careers",
+            "title": "",
+            "base_domain": "workable.com",
+            "head_data": null,
+            "head_extraction_status": null,
+            "head_extraction_error": null,
+            "intrinsic_score": 2.5,
+            "contextual_score": null,
+            "total_score": 2.5
+          },
+          {
+            "href": "https://www.youtube.com/realpython",
+            "text": "",
+            "title": "YouTube",
+            "base_domain": "youtube.com",
+            "head_data": null,
+            "head_extraction_status": null,
+            "head_extraction_error": null,
+            "intrinsic_score": 2.5,
+            "contextual_score": null,
+            "total_score": 2.5
+          },
+          {
+            "href": "https://x.com/realpython",
+            "text": "",
+            "title": "X/Twitter",
+            "base_domain": "x.com",
+            "head_data": null,
+            "head_extraction_status": null,
+            "head_extraction_error": null,
+            "intrinsic_score": 2.5,
+            "contextual_score": null,
+            "total_score": 2.5
+          },
+          {
+            "href": "https://www.linkedin.com/company/realpython-com",
+            "text": "",
+            "title": "LinkedIn",
+            "base_domain": "linkedin.com",
+            "head_data": null,
+            "head_extraction_status": null,
+            "head_extraction_error": null,
+            "intrinsic_score": 2.5,
+            "contextual_score": null,
+            "total_score": 2.5
+          },
+          {
+            "href": "https://www.facebook.com/LearnRealPython",
+            "text": "",
+            "title": "Facebook",
+            "base_domain": "facebook.com",
+            "head_data": null,
+            "head_extraction_status": null,
+            "head_extraction_error": null,
+            "intrinsic_score": 2.5,
+            "contextual_score": null,
+            "total_score": 2.5
+          },
+          {
+            "href": "https://github.com/realpython/",
+            "text": "",
+            "title": "GitHub",
+            "base_domain": "github.com",
+            "head_data": null,
+            "head_extraction_status": null,
+            "head_extraction_error": null,
+            "intrinsic_score": 2.5,
+            "contextual_score": null,
+            "total_score": 2.5
+          }
+        ]
+      },
+      "metadata": {
+        "title": "Real Python: Build Real-World Python Skills",
+        "description": "Build real-world Python skills by doing: expert-written tutorials with interactive quizzes and coding exercises, video courses, and an AI mentor that guides you at every level.",
+        "keywords": "",
+        "author": "Real Python",
+        "og:image": "https://realpython.com/static/social-default-image.5e1aa4786b3a.png",
+        "og:title": "Real Python: Build Real-World Python Skills",
+        "og:type": "website",
+        "og:url": "https://realpython.com/",
+        "og:description": "Build real-world Python skills by doing: expert-written tutorials with interactive quizzes and coding exercises, video courses, and an AI mentor that guides you at every level.",
+        "twitter:card": "summary",
+        "twitter:creator": "@realpython",
+        "twitter:site": "@realpython"
+      }
+    }
+  ],
+  "pending_links": [],
+  "query": "cooking",
+  "metrics": {
+    "coverage": 0.0,
+    "consistency": 1.0,
+    "saturation": 0.0,
+    "confidence": 0.3,
+    "pages_crawled": 1,
+    "depth_reached": 0
+  },
+  "term_frequencies": {
+    "real": 9,
+    "python": 111,
+    "https": 229,
+    "realpython": 228,
+    "com": 230,
+    "static": 4,
+    "logo": 7,
+    "893c30edea53": 1,
+    "svg": 2,
+    "start": 5,
+    "here": 5,
+    "learn": 8,
+    "learning": 22,
+    "your": 13,
+    "plan": 8,
+    "personalized": 2,
+    "account": 11,
+    "tutorials": 84,
+    "depth": 2,
+    "articles": 2,
+    "and": 36,
+    "video": 2,
+    "courses": 19,
+    "search": 21,
+    "kind": 8,
+    "article": 2,
+    "course": 2,
+    "order": 4,
+    "newest": 4,
+    "paths": 9,
+    "guided": 3,
+    "study": 2,
+    "plans": 4,
+    "for": 14,
+    "accelerated": 2,
+    "practice": 2,
+    "quizzes": 4,
+    "exercises": 3,
+    "check": 1,
+    "progress": 1,
+    "exercise": 2,
+    "quiz": 2,
+    "browse": 4,
+    "topics": 4,
+    "focus": 2,
+    "specific": 2,
+    "area": 2,
+    "skill": 2,
+    "level": 5,
+    "all": 12,
+    "reference": 3,
+    "concise": 2,
+    "definitions": 2,
+    "common": 2,
+    "terms": 4,
+    "ref": 3,
+    "get": 4,
+    "help": 1,
+    "code": 16,
+    "mentor": 6,
+    "betapersonalized": 1,
+    "assistance": 3,
+    "tools": 18,
+    "office": 6,
+    "hours": 6,
+    "live": 10,
+    "calls": 2,
+    "with": 36,
+    "experts": 2,
+    "community": 11,
+    "chat": 3,
+    "other": 3,
+    "pythonistas": 2,
+    "deeper": 1,
+    "instructor": 1,
+    "led": 1,
+    "books": 6,
+    "round": 2,
+    "out": 2,
+    "knowledge": 3,
+    "offline": 2,
+    "products": 2,
+    "podcast": 4,
+    "hear": 2,
+    "what": 3,
+    "new": 5,
+    "the": 8,
+    "world": 2,
+    "podcasts": 6,
+    "rpp": 5,
+    "unlock": 2,
+    "content": 2,
+    "become": 3,
+    "expert": 3,
+    "unlimited": 1,
+    "access": 1,
+    "has": 1,
+    "offer": 1,
+    "join": 9,
+    "from": 5,
+    "navbar_learn": 2,
+    "more": 2,
+    "learner": 5,
+    "stories": 5,
+    "newsletter": 4,
+    "job": 1,
+    "board": 1,
+    "www": 4,
+    "pythonjobshq": 1,
+    "meet": 1,
+    "team": 8,
+    "contributor": 1,
+    "jobs": 1,
+    "sign": 1,
+    "login": 1,
+    "intent": 2,
+    "navbar": 1,
+    "next": 3,
+    "person": 5,
+    "arranging": 1,
+    "cards": 1,
+    "drafting": 1,
+    "table": 1,
+    "beside": 5,
+    "machine": 4,
+    "build": 7,
+    "debug": 6,
+    "extend": 1,
+    "panels": 3,
+    "claude": 13,
+    "console": 2,
+    "project": 2,
+    "folder": 1,
+    "holding": 1,
+    "pixel": 1,
+    "art": 1,
+    "bug": 3,
+    "chip": 3,
+    "files": 21,
+    "media": 22,
+    "how": 19,
+    "use": 15,
+    "terminal": 3,
+    "coding": 4,
+    "assistant_watermarked": 1,
+    "2916c96a3049": 1,
+    "jpg": 19,
+    "write": 3,
+    "projects": 4,
+    "natural": 1,
+    "language": 1,
+    "commands": 1,
+    "right": 1,
+    "aug": 9,
+    "2026": 23,
+    "intermediate": 36,
+    "view": 2,
+    "307": 1,
+    "improving": 1,
+    "numpy": 10,
+    "performance": 1,
+    "free": 4,
+    "threaded": 2,
+    "loading": 1,
+    "0046": 1,
+    "introduction": 1,
+    "candidate": 1,
+    "are": 2,
+    "now": 2,
+    "available": 1,
+    "django": 6,
+    "released": 1,
+    "planned": 1,
+    "updates": 1,
+    "pypi": 2,
+    "user": 1,
+    "interface": 1,
+    "releases": 2,
+    "reject": 1,
+    "after": 1,
+    "days": 1,
+    "pep": 3,
+    "837": 1,
+    "extensible": 1,
+    "json": 1,
+    "serialization": 1,
+    "842": 1,
+    "module": 1,
+    "exports": 1,
+    "introducing": 1,
+    "crawl": 1,
+    "simd": 1,
+    "pure": 1,
+    "managing": 4,
+    "imports": 5,
+    "__all__": 4,
+    "spotlight": 1,
+    "modern": 1,
+    "object": 1,
+    "oriented": 1,
+    "book": 1,
+    "scaling": 1,
+    "cnsplots": 1,
+    "data": 19,
+    "visualization": 1,
+    "complex": 1,
+    "datasets": 1,
+    "orm": 1,
+    "lens": 1,
+    "schema": 1,
+    "review": 2,
+    "thanks": 1,
+    "goodbye": 1,
+    "email": 1,
+    "series": 1,
+    "tricks": 3,
+    "dictionary": 1,
+    "merge": 2,
+    "pytrick": 1,
+    "dict": 1,
+    "4201a0125a5e": 1,
+    "png": 2,
+    "spam": 1,
+    "unsubscribe": 1,
+    "any": 1,
+    "time": 1,
+    "basics": 5,
+    "advanced": 2,
+    "algorithms": 2,
+    "api": 2,
+    "best": 4,
+    "practices": 4,
+    "career": 2,
+    "databases": 2,
+    "science": 6,
+    "structures": 6,
+    "viz": 2,
+    "devops": 4,
+    "docker": 2,
+    "editors": 2,
+    "flask": 2,
+    "front": 3,
+    "end": 2,
+    "gamedev": 2,
+    "gui": 7,
+    "news": 8,
+    "stdlib": 4,
+    "testing": 2,
+    "web": 8,
+    "dev": 6,
+    "scraping": 2,
+    "explore": 1,
+    "create": 1,
+    "custom": 1,
+    "tailored": 1,
+    "you": 1,
+    "signup": 1,
+    "2faccount": 1,
+    "2flearning": 1,
+    "learning_plan": 1,
+    "step": 2,
+    "evaluate": 1,
+    "beta": 1,
+    "intelligent": 1,
+    "transform": 1,
+    "skills": 1,
+    "guidance": 1,
+    "deque": 4,
+    "implement": 1,
+    "efficient": 1,
+    "queues": 1,
+    "stacks": 2,
+    "collections": 1,
+    "deque_watermarked": 1,
+    "066fbf353cb4": 1,
+    "working": 4,
+    "pythons": 7,
+    "robot": 3,
+    "points": 2,
+    "says": 1,
+    "found": 1,
+    "labeled": 8,
+    "agent": 2,
+    "verify": 1,
+    "screen": 4,
+    "meter": 1,
+    "happy": 2,
+    "sad": 1,
+    "faces": 1,
+    "green": 2,
+    "creature": 1,
+    "glass": 1,
+    "case": 1,
+    "agent_watermarked": 1,
+    "44341c4ae7ec": 1,
+    "debugging": 2,
+    "wearing": 1,
+    "headphones": 1,
+    "mission": 3,
+    "control": 2,
+    "radar": 1,
+    "graph": 1,
+    "gauges": 1,
+    "latency": 1,
+    "traces": 1,
+    "logs": 2,
+    "panel": 2,
+    "status": 1,
+    "integrate": 2,
+    "opentelemetry": 4,
+    "fastapi": 4,
+    "app_watermarked": 1,
+    "750b03bc7c47": 1,
+    "app": 1,
+    "hard": 1,
+    "hat": 1,
+    "safety": 1,
+    "goggles": 1,
+    "clipboard": 1,
+    "stands": 1,
+    "wall": 1,
+    "opencode": 5,
+    "analyze": 1,
+    "refactor": 1,
+    "models": 1,
+    "lsp": 1,
+    "git": 1,
+    "modes": 1,
+    "assisted": 2,
+    "engineering_watermarked": 1,
+    "737726d966fd": 1,
+    "designer": 4,
+    "applications": 3,
+    "faster": 2,
+    "creating": 1,
+    "designer_watermarked": 1,
+    "a557daee0374": 1,
+    "worker": 1,
+    "kneels": 1,
+    "branded": 1,
+    "validation": 1,
+    "validating": 3,
+    "sorting": 1,
+    "boxes": 1,
+    "conveyor": 1,
+    "belt": 1,
+    "into": 1,
+    "two": 1,
+    "marked": 2,
+    "pass": 1,
+    "alongside": 2,
+    "wooden": 2,
+    "crates": 2,
+    "pointblank": 4,
+    "python_watermarked": 3,
+    "e361acd055a3": 1,
+    "remove": 1,
+    "ads": 1,
+    "sending": 5,
+    "emails": 5,
+    "update": 1,
+    "d82e038c1c1c": 1,
+    "using": 5,
+    "monthly": 2,
+    "news_red_watermarked": 1,
+    "c82fffdbc32e": 1,
+    "august": 3,
+    "mcp": 1,
+    "gets": 1,
+    "its": 1,
+    "biggest": 1,
+    "rewrite": 1,
+    "coordinating": 3,
+    "teams": 3,
+    "agents": 5,
+    "crewai": 5,
+    "d44efee0c44f": 1,
+    "jul": 10,
+    "packages": 2,
+    "modules": 2,
+    "wildcard": 2,
+    "set": 1,
+    "imports_watermarked": 1,
+    "698d61e0300d": 1,
+    "dunder": 2,
+    "floating": 1,
+    "scientist": 1,
+    "lab": 1,
+    "coat": 1,
+    "operates": 1,
+    "lever": 1,
+    "reading": 1,
+    "prompt": 1,
+    "drawers": 2,
+    "flow": 1,
+    "waving": 1,
+    "antigravity": 4,
+    "cli": 4,
+    "assistance_watermarked": 1,
+    "5eb983b3713c": 1,
+    "google": 1,
+    "triumphantly": 1,
+    "raises": 1,
+    "key": 1,
+    "vault": 1,
+    "pylock": 5,
+    "toml": 5,
+    "rack": 1,
+    "colored": 1,
+    "keys": 1,
+    "hashes": 1,
+    "manage": 1,
+    "dependencies": 1,
+    "lock": 4,
+    "file_watermarked": 1,
+    "94f86fd67ee8": 1,
+    "file": 4,
+    "tool": 1,
+    "agnostic": 1,
+    "751": 1,
+    "built": 5,
+    "functions": 6,
+    "complete": 1,
+    "exploration": 1,
+    "quick": 1,
+    "exploration_watermarked": 1,
+    "44a8e102943b": 1,
+    "exploring": 3,
+    "reshape": 4,
+    "change": 2,
+    "shape": 2,
+    "array": 2,
+    "numpys": 1,
+    "reshape_watermarked": 1,
+    "88dac560fd74": 1,
+    "filing": 1,
+    "cabinet": 1,
+    "global": 1,
+    "local": 1,
+    "tag": 1,
+    "memory": 1,
+    "checklist": 1,
+    "items": 1,
+    "code_watermarked": 1,
+    "ea7aeffdb75e": 1,
+    "mixin": 4,
+    "classes": 4,
+    "multiple": 1,
+    "inheritance": 1,
+    "mixins_watermarked": 1,
+    "1cfef28a6113": 1,
+    "understanding": 3,
+    "langgraph": 4,
+    "stateful": 2,
+    "showcase": 1,
+    "langgraph_watermarked": 1,
+    "6435fda68bc4": 1,
+    "tutorial": 1,
+    "github": 7,
+    "2542b35787ba": 1,
+    "load": 1,
+    "resources": 1,
+    "cheat": 5,
+    "sheet": 5,
+    "cheatsheets": 1,
+    "support": 2,
+    "center": 1,
+    "membership": 1,
+    "pricing": 1,
+    "business": 1,
+    "inquiry": 2,
+    "schools": 1,
+    "education": 1,
+    "reviews": 1,
+    "company": 2,
+    "about": 2,
+    "values": 1,
+    "editorial": 2,
+    "guidelines": 2,
+    "sponsorships": 2,
+    "careers": 1,
+    "workable": 1,
+    "press": 1,
+    "kit": 2,
+    "merch": 2,
+    "youtube": 2,
+    "twitter": 1,
+    "linkedin": 2,
+    "facebook": 2,
+    "learnrealpython": 1,
+    "privacy": 2,
+    "policy": 2,
+    "security": 2,
+    "contact": 2,
+    "pythoning": 1,
+    "2012": 1,
+    "devcademy": 2,
+    "inc": 2,
+    "dba": 1,
+    "rights": 1,
+    "reserved": 1,
+    "trademark": 1,
+    "online": 1,
+    "training": 1,
+    "primary": 1,
+    "973743b6d39d": 1,
+    "bonus": 1,
+    "pdf": 1,
+    "like": 1,
+    "types": 1,
+    "dictionaries": 1,
+    "lists": 1,
+    "cheatsheet": 1,
+    "stacked": 1,
+    "c9ac81c58bcc": 1,
+    "send": 1
+  },
+  "document_frequencies": {
+    "faster": 1,
+    "has": 1,
+    "numpy": 1,
+    "web": 1,
+    "analyze": 1,
+    "lsp": 1,
+    "account": 1,
+    "knowledge": 1,
+    "raises": 1,
+    "5eb983b3713c": 1,
+    "common": 1,
+    "flask": 1,
+    "rights": 1,
+    "__all__": 1,
+    "quizzes": 1,
+    "updates": 1,
+    "750b03bc7c47": 1,
+    "pure": 1,
+    "agents": 1,
+    "complete": 1,
+    "structures": 1,
+    "science": 1,
+    "panel": 1,
+    "mission": 1,
+    "pytrick": 1,
+    "devcademy": 1,
+    "introduction": 1,
+    "exercises": 1,
+    "art": 1,
+    "4201a0125a5e": 1,
+    "training": 1,
+    "pointblank": 1,
+    "collections": 1,
+    "remove": 1,
+    "creating": 1,
+    "accelerated": 1,
+    "panels": 1,
+    "change": 1,
+    "gauges": 1,
+    "mentor": 1,
+    "green": 1,
+    "explore": 1,
+    "intelligent": 1,
+    "scaling": 1,
+    "colored": 1,
+    "front": 1,
+    "sending": 1,
+    "personalized": 1,
+    "hear": 1,
+    "goggles": 1,
+    "beside": 1,
+    "api": 1,
+    "array": 1,
+    "set": 1,
+    "memory": 1,
+    "graph": 1,
+    "com": 1,
+    "pythonjobshq": 1,
+    "triumphantly": 1,
+    "newsletter": 1,
+    "dependencies": 1,
+    "commands": 1,
+    "navbar_learn": 1,
+    "skill": 1,
+    "crates": 1,
+    "exploration_watermarked": 1,
+    "are": 1,
+    "two": 1,
+    "extend": 1,
+    "devops": 1,
+    "released": 1,
+    "drafting": 1,
+    "branded": 1,
+    "www": 1,
+    "google": 1,
+    "real": 1,
+    "lock": 1,
+    "quiz": 1,
+    "intent": 1,
+    "view": 1,
+    "safety": 1,
+    "validating": 1,
+    "jobs": 1,
+    "trademark": 1,
+    "tutorials": 1,
+    "login": 1,
+    "88dac560fd74": 1,
+    "search": 1,
+    "media": 1,
+    "creature": 1,
+    "team": 1,
+    "global": 1,
+    "progress": 1,
+    "status": 1,
+    "glass": 1,
+    "pixel": 1,
+    "center": 1,
+    "write": 1,
+    "here": 1,
+    "spotlight": 1,
+    "ref": 1,
+    "dict": 1,
+    "pythoning": 1,
+    "837": 1,
+    "instructor": 1,
+    "right": 1,
+    "schools": 1,
+    "products": 1,
+    "static": 1,
+    "goodbye": 1,
+    "projects": 1,
+    "antigravity": 1,
+    "betapersonalized": 1,
+    "44341c4ae7ec": 1,
+    "guidance": 1,
+    "fastapi": 1,
+    "github": 1,
+    "next": 1,
+    "twitter": 1,
+    "opencode": 1,
+    "releases": 1,
+    "testing": 1,
+    "cnsplots": 1,
+    "dunder": 1,
+    "more": 1,
+    "happy": 1,
+    "alongside": 1,
+    "exploration": 1,
+    "conveyor": 1,
+    "days": 1,
+    "refactor": 1,
+    "pypi": 1,
+    "offer": 1,
+    "deque_watermarked": 1,
+    "its": 1,
+    "practices": 1,
+    "youtube": 1,
+    "pdf": 1,
+    "pep": 1,
+    "labeled": 1,
+    "learn": 1,
+    "types": 1,
+    "deeper": 1,
+    "depth": 1,
+    "basics": 1,
+    "review": 1,
+    "exercise": 1,
+    "like": 1,
+    "gamedev": 1,
+    "deque": 1,
+    "debugging": 1,
+    "clipboard": 1,
+    "step": 1,
+    "agent_watermarked": 1,
+    "control": 1,
+    "files": 1,
+    "kind": 1,
+    "email": 1,
+    "integrate": 1,
+    "assistant_watermarked": 1,
+    "folder": 1,
+    "cheatsheets": 1,
+    "community": 1,
+    "lever": 1,
+    "app": 1,
+    "44a8e102943b": 1,
+    "linkedin": 1,
+    "assistance": 1,
+    "paths": 1,
+    "2flearning": 1,
+    "order": 1,
+    "course": 1,
+    "belt": 1,
+    "you": 1,
+    "databases": 1,
+    "case": 1,
+    "cli": 1,
+    "drawers": 1,
+    "person": 1,
+    "complex": 1,
+    "manage": 1,
+    "973743b6d39d": 1,
+    "git": 1,
+    "floating": 1,
+    "logs": 1,
+    "tricks": 1,
+    "facebook": 1,
+    "check": 1,
+    "reserved": 1,
+    "introducing": 1,
+    "d44efee0c44f": 1,
+    "exploring": 1,
+    "for": 1,
+    "sheet": 1,
+    "managing": 1,
+    "focus": 1,
+    "podcast": 1,
+    "about": 1,
+    "visualization": 1,
+    "into": 1,
+    "dictionaries": 1,
+    "e361acd055a3": 1,
+    "reading": 1,
+    "751": 1,
+    "how": 1,
+    "intermediate": 1,
+    "education": 1,
+    "values": 1,
+    "using": 1,
+    "307": 1,
+    "numpys": 1,
+    "94f86fd67ee8": 1,
+    "project": 1,
+    "key": 1,
+    "2012": 1,
+    "access": 1,
+    "with": 1,
+    "primary": 1,
+    "online": 1,
+    "rewrite": 1,
+    "reshape_watermarked": 1,
+    "understanding": 1,
+    "django": 1,
+    "newest": 1,
+    "bonus": 1,
+    "2faccount": 1,
+    "sponsorships": 1,
+    "ea7aeffdb75e": 1,
+    "table": 1,
+    "aug": 1,
+    "wildcard": 1,
+    "cheat": 1,
+    "help": 1,
+    "study": 1,
+    "data": 1,
+    "schema": 1,
+    "monthly": 1,
+    "simd": 1,
+    "membership": 1,
+    "hat": 1,
+    "article": 1,
+    "cheatsheet": 1,
+    "tag": 1,
+    "reference": 1,
+    "unlock": 1,
+    "learning_plan": 1,
+    "free": 1,
+    "crawl": 1,
+    "c82fffdbc32e": 1,
+    "improving": 1,
+    "hashes": 1,
+    "file": 1,
+    "privacy": 1,
+    "learning": 1,
+    "series": 1,
+    "mcp": 1,
+    "chat": 1,
+    "docker": 1,
+    "quick": 1,
+    "agnostic": 1,
+    "models": 1,
+    "stdlib": 1,
+    "become": 1,
+    "from": 1,
+    "0046": 1,
+    "beta": 1,
+    "scraping": 1,
+    "ads": 1,
+    "send": 1,
+    "and": 1,
+    "langgraph_watermarked": 1,
+    "c9ac81c58bcc": 1,
+    "what": 1,
+    "lists": 1,
+    "698d61e0300d": 1,
+    "operates": 1,
+    "machine": 1,
+    "video": 1,
+    "led": 1,
+    "imports": 1,
+    "business": 1,
+    "json": 1,
+    "topics": 1,
+    "waving": 1,
+    "scientist": 1,
+    "specific": 1,
+    "candidate": 1,
+    "thanks": 1,
+    "contact": 1,
+    "arranging": 1,
+    "experts": 1,
+    "office": 1,
+    "worker": 1,
+    "inc": 1,
+    "unsubscribe": 1,
+    "rack": 1,
+    "browse": 1,
+    "cabinet": 1,
+    "start": 1,
+    "latency": 1,
+    "console": 1,
+    "pricing": 1,
+    "build": 1,
+    "claude": 1,
+    "inquiry": 1,
+    "marked": 1,
+    "d82e038c1c1c": 1,
+    "plan": 1,
+    "gets": 1,
+    "sign": 1,
+    "keys": 1,
+    "inheritance": 1,
+    "stacks": 1,
+    "expert": 1,
+    "use": 1,
+    "content": 1,
+    "loading": 1,
+    "best": 1,
+    "2542b35787ba": 1,
+    "wooden": 1,
+    "pythonistas": 1,
+    "boxes": 1,
+    "join": 1,
+    "any": 1,
+    "unlimited": 1,
+    "spam": 1,
+    "efficient": 1,
+    "update": 1,
+    "mixins_watermarked": 1,
+    "tools": 1,
+    "checklist": 1,
+    "items": 1,
+    "pythons": 1,
+    "articles": 1,
+    "algorithms": 1,
+    "implement": 1,
+    "kit": 1,
+    "reject": 1,
+    "queues": 1,
+    "load": 1,
+    "viz": 1,
+    "modern": 1,
+    "module": 1,
+    "threaded": 1,
+    "custom": 1,
+    "file_watermarked": 1,
+    "book": 1,
+    "coding": 1,
+    "filing": 1,
+    "tool": 1,
+    "svg": 1,
+    "mixin": 1,
+    "png": 1,
+    "lens": 1,
+    "verify": 1,
+    "oriented": 1,
+    "biggest": 1,
+    "definitions": 1,
+    "transform": 1,
+    "imports_watermarked": 1,
+    "sorting": 1,
+    "2916c96a3049": 1,
+    "navbar": 1,
+    "holding": 1,
+    "https": 1,
+    "wearing": 1,
+    "built": 1,
+    "code_watermarked": 1,
+    "skills": 1,
+    "now": 1,
+    "contributor": 1,
+    "company": 1,
+    "cards": 1,
+    "editors": 1,
+    "coat": 1,
+    "dev": 1,
+    "calls": 1,
+    "wall": 1,
+    "interface": 1,
+    "applications": 1,
+    "flow": 1,
+    "tutorial": 1,
+    "signup": 1,
+    "area": 1,
+    "rpp": 1,
+    "stateful": 1,
+    "natural": 1,
+    "lab": 1,
+    "python_watermarked": 1,
+    "coordinating": 1,
+    "merch": 1,
+    "066fbf353cb4": 1,
+    "737726d966fd": 1,
+    "vault": 1,
+    "learnrealpython": 1,
+    "engineering_watermarked": 1,
+    "pylock": 1,
+    "opentelemetry": 1,
+    "podcasts": 1,
+    "serialization": 1,
+    "realpython": 1,
+    "terminal": 1,
+    "packages": 1,
+    "plans": 1,
+    "842": 1,
+    "shape": 1,
+    "courses": 1,
+    "resources": 1,
+    "all": 1,
+    "other": 1,
+    "code": 1,
+    "after": 1,
+    "merge": 1,
+    "python": 1,
+    "live": 1,
+    "reshape": 1,
+    "new": 1,
+    "the": 1,
+    "prompt": 1,
+    "security": 1,
+    "end": 1,
+    "teams": 1,
+    "found": 1,
+    "concise": 1,
+    "out": 1,
+    "available": 1,
+    "offline": 1,
+    "2026": 1,
+    "traces": 1,
+    "job": 1,
+    "august": 1,
+    "jul": 1,
+    "radar": 1,
+    "news_red_watermarked": 1,
+    "performance": 1,
+    "toml": 1,
+    "meet": 1,
+    "modules": 1,
+    "a557daee0374": 1,
+    "object": 1,
+    "hours": 1,
+    "support": 1,
+    "dictionary": 1,
+    "learner": 1,
+    "designer": 1,
+    "functions": 1,
+    "faces": 1,
+    "news": 1,
+    "editorial": 1,
+    "robot": 1,
+    "validation": 1,
+    "local": 1,
+    "agent": 1,
+    "get": 1,
+    "tailored": 1,
+    "hard": 1,
+    "assisted": 1,
+    "6435fda68bc4": 1,
+    "modes": 1,
+    "press": 1,
+    "orm": 1,
+    "sad": 1,
+    "jpg": 1,
+    "classes": 1,
+    "create": 1,
+    "your": 1,
+    "chip": 1,
+    "pass": 1,
+    "practice": 1,
+    "advanced": 1,
+    "policy": 1,
+    "exports": 1,
+    "stories": 1,
+    "books": 1,
+    "career": 1,
+    "user": 1,
+    "language": 1,
+    "emails": 1,
+    "world": 1,
+    "kneels": 1,
+    "time": 1,
+    "board": 1,
+    "showcase": 1,
+    "careers": 1,
+    "stacked": 1,
+    "crewai": 1,
+    "workable": 1,
+    "langgraph": 1,
+    "app_watermarked": 1,
+    "terms": 1,
+    "designer_watermarked": 1,
+    "says": 1,
+    "stands": 1,
+    "1cfef28a6113": 1,
+    "893c30edea53": 1,
+    "dba": 1,
+    "points": 1,
+    "guidelines": 1,
+    "working": 1,
+    "screen": 1,
+    "round": 1,
+    "extensible": 1,
+    "datasets": 1,
+    "gui": 1,
+    "bug": 1,
+    "meter": 1,
+    "level": 1,
+    "multiple": 1,
+    "planned": 1,
+    "headphones": 1,
+    "assistance_watermarked": 1,
+    "logo": 1,
+    "debug": 1,
+    "evaluate": 1,
+    "reviews": 1,
+    "guided": 1
+  },
+  "documents_with_terms": {
+    "faster": [
+      0
+    ],
+    "has": [
+      0
+    ],
+    "numpy": [
+      0
+    ],
+    "web": [
+      0
+    ],
+    "analyze": [
+      0
+    ],
+    "lsp": [
+      0
+    ],
+    "account": [
+      0
+    ],
+    "knowledge": [
+      0
+    ],
+    "raises": [
+      0
+    ],
+    "5eb983b3713c": [
+      0
+    ],
+    "common": [
+      0
+    ],
+    "flask": [
+      0
+    ],
+    "rights": [
+      0
+    ],
+    "__all__": [
+      0
+    ],
+    "quizzes": [
+      0
+    ],
+    "updates": [
+      0
+    ],
+    "750b03bc7c47": [
+      0
+    ],
+    "pure": [
+      0
+    ],
+    "agents": [
+      0
+    ],
+    "complete": [
+      0
+    ],
+    "structures": [
+      0
+    ],
+    "science": [
+      0
+    ],
+    "panel": [
+      0
+    ],
+    "mission": [
+      0
+    ],
+    "pytrick": [
+      0
+    ],
+    "devcademy": [
+      0
+    ],
+    "introduction": [
+      0
+    ],
+    "exercises": [
+      0
+    ],
+    "art": [
+      0
+    ],
+    "4201a0125a5e": [
+      0
+    ],
+    "training": [
+      0
+    ],
+    "pointblank": [
+      0
+    ],
+    "collections": [
+      0
+    ],
+    "remove": [
+      0
+    ],
+    "creating": [
+      0
+    ],
+    "accelerated": [
+      0
+    ],
+    "panels": [
+      0
+    ],
+    "change": [
+      0
+    ],
+    "gauges": [
+      0
+    ],
+    "mentor": [
+      0
+    ],
+    "green": [
+      0
+    ],
+    "explore": [
+      0
+    ],
+    "intelligent": [
+      0
+    ],
+    "scaling": [
+      0
+    ],
+    "colored": [
+      0
+    ],
+    "front": [
+      0
+    ],
+    "sending": [
+      0
+    ],
+    "personalized": [
+      0
+    ],
+    "hear": [
+      0
+    ],
+    "goggles": [
+      0
+    ],
+    "beside": [
+      0
+    ],
+    "api": [
+      0
+    ],
+    "array": [
+      0
+    ],
+    "set": [
+      0
+    ],
+    "memory": [
+      0
+    ],
+    "graph": [
+      0
+    ],
+    "com": [
+      0
+    ],
+    "pythonjobshq": [
+      0
+    ],
+    "triumphantly": [
+      0
+    ],
+    "newsletter": [
+      0
+    ],
+    "dependencies": [
+      0
+    ],
+    "commands": [
+      0
+    ],
+    "navbar_learn": [
+      0
+    ],
+    "skill": [
+      0
+    ],
+    "crates": [
+      0
+    ],
+    "exploration_watermarked": [
+      0
+    ],
+    "are": [
+      0
+    ],
+    "two": [
+      0
+    ],
+    "extend": [
+      0
+    ],
+    "devops": [
+      0
+    ],
+    "released": [
+      0
+    ],
+    "drafting": [
+      0
+    ],
+    "branded": [
+      0
+    ],
+    "www": [
+      0
+    ],
+    "google": [
+      0
+    ],
+    "real": [
+      0
+    ],
+    "lock": [
+      0
+    ],
+    "quiz": [
+      0
+    ],
+    "intent": [
+      0
+    ],
+    "view": [
+      0
+    ],
+    "safety": [
+      0
+    ],
+    "validating": [
+      0
+    ],
+    "jobs": [
+      0
+    ],
+    "trademark": [
+      0
+    ],
+    "tutorials": [
+      0
+    ],
+    "login": [
+      0
+    ],
+    "88dac560fd74": [
+      0
+    ],
+    "search": [
+      0
+    ],
+    "media": [
+      0
+    ],
+    "creature": [
+      0
+    ],
+    "team": [
+      0
+    ],
+    "global": [
+      0
+    ],
+    "progress": [
+      0
+    ],
+    "status": [
+      0
+    ],
+    "glass": [
+      0
+    ],
+    "pixel": [
+      0
+    ],
+    "center": [
+      0
+    ],
+    "write": [
+      0
+    ],
+    "here": [
+      0
+    ],
+    "spotlight": [
+      0
+    ],
+    "ref": [
+      0
+    ],
+    "dict": [
+      0
+    ],
+    "pythoning": [
+      0
+    ],
+    "837": [
+      0
+    ],
+    "instructor": [
+      0
+    ],
+    "right": [
+      0
+    ],
+    "schools": [
+      0
+    ],
+    "products": [
+      0
+    ],
+    "static": [
+      0
+    ],
+    "goodbye": [
+      0
+    ],
+    "projects": [
+      0
+    ],
+    "antigravity": [
+      0
+    ],
+    "betapersonalized": [
+      0
+    ],
+    "44341c4ae7ec": [
+      0
+    ],
+    "guidance": [
+      0
+    ],
+    "fastapi": [
+      0
+    ],
+    "github": [
+      0
+    ],
+    "next": [
+      0
+    ],
+    "twitter": [
+      0
+    ],
+    "opencode": [
+      0
+    ],
+    "releases": [
+      0
+    ],
+    "testing": [
+      0
+    ],
+    "cnsplots": [
+      0
+    ],
+    "dunder": [
+      0
+    ],
+    "more": [
+      0
+    ],
+    "happy": [
+      0
+    ],
+    "alongside": [
+      0
+    ],
+    "exploration": [
+      0
+    ],
+    "conveyor": [
+      0
+    ],
+    "days": [
+      0
+    ],
+    "refactor": [
+      0
+    ],
+    "pypi": [
+      0
+    ],
+    "offer": [
+      0
+    ],
+    "deque_watermarked": [
+      0
+    ],
+    "its": [
+      0
+    ],
+    "practices": [
+      0
+    ],
+    "youtube": [
+      0
+    ],
+    "pdf": [
+      0
+    ],
+    "pep": [
+      0
+    ],
+    "labeled": [
+      0
+    ],
+    "learn": [
+      0
+    ],
+    "types": [
+      0
+    ],
+    "deeper": [
+      0
+    ],
+    "depth": [
+      0
+    ],
+    "basics": [
+      0
+    ],
+    "review": [
+      0
+    ],
+    "exercise": [
+      0
+    ],
+    "like": [
+      0
+    ],
+    "gamedev": [
+      0
+    ],
+    "deque": [
+      0
+    ],
+    "debugging": [
+      0
+    ],
+    "clipboard": [
+      0
+    ],
+    "step": [
+      0
+    ],
+    "agent_watermarked": [
+      0
+    ],
+    "control": [
+      0
+    ],
+    "files": [
+      0
+    ],
+    "kind": [
+      0
+    ],
+    "email": [
+      0
+    ],
+    "integrate": [
+      0
+    ],
+    "assistant_watermarked": [
+      0
+    ],
+    "folder": [
+      0
+    ],
+    "cheatsheets": [
+      0
+    ],
+    "community": [
+      0
+    ],
+    "lever": [
+      0
+    ],
+    "app": [
+      0
+    ],
+    "44a8e102943b": [
+      0
+    ],
+    "linkedin": [
+      0
+    ],
+    "assistance": [
+      0
+    ],
+    "paths": [
+      0
+    ],
+    "2flearning": [
+      0
+    ],
+    "order": [
+      0
+    ],
+    "course": [
+      0
+    ],
+    "belt": [
+      0
+    ],
+    "you": [
+      0
+    ],
+    "databases": [
+      0
+    ],
+    "case": [
+      0
+    ],
+    "cli": [
+      0
+    ],
+    "drawers": [
+      0
+    ],
+    "person": [
+      0
+    ],
+    "complex": [
+      0
+    ],
+    "manage": [
+      0
+    ],
+    "973743b6d39d": [
+      0
+    ],
+    "git": [
+      0
+    ],
+    "floating": [
+      0
+    ],
+    "logs": [
+      0
+    ],
+    "tricks": [
+      0
+    ],
+    "facebook": [
+      0
+    ],
+    "check": [
+      0
+    ],
+    "reserved": [
+      0
+    ],
+    "introducing": [
+      0
+    ],
+    "d44efee0c44f": [
+      0
+    ],
+    "exploring": [
+      0
+    ],
+    "for": [
+      0
+    ],
+    "sheet": [
+      0
+    ],
+    "managing": [
+      0
+    ],
+    "focus": [
+      0
+    ],
+    "podcast": [
+      0
+    ],
+    "about": [
+      0
+    ],
+    "visualization": [
+      0
+    ],
+    "into": [
+      0
+    ],
+    "dictionaries": [
+      0
+    ],
+    "e361acd055a3": [
+      0
+    ],
+    "reading": [
+      0
+    ],
+    "751": [
+      0
+    ],
+    "how": [
+      0
+    ],
+    "intermediate": [
+      0
+    ],
+    "education": [
+      0
+    ],
+    "values": [
+      0
+    ],
+    "using": [
+      0
+    ],
+    "307": [
+      0
+    ],
+    "numpys": [
+      0
+    ],
+    "94f86fd67ee8": [
+      0
+    ],
+    "project": [
+      0
+    ],
+    "key": [
+      0
+    ],
+    "2012": [
+      0
+    ],
+    "access": [
+      0
+    ],
+    "with": [
+      0
+    ],
+    "primary": [
+      0
+    ],
+    "online": [
+      0
+    ],
+    "rewrite": [
+      0
+    ],
+    "reshape_watermarked": [
+      0
+    ],
+    "understanding": [
+      0
+    ],
+    "django": [
+      0
+    ],
+    "newest": [
+      0
+    ],
+    "bonus": [
+      0
+    ],
+    "2faccount": [
+      0
+    ],
+    "sponsorships": [
+      0
+    ],
+    "ea7aeffdb75e": [
+      0
+    ],
+    "table": [
+      0
+    ],
+    "aug": [
+      0
+    ],
+    "wildcard": [
+      0
+    ],
+    "cheat": [
+      0
+    ],
+    "help": [
+      0
+    ],
+    "study": [
+      0
+    ],
+    "data": [
+      0
+    ],
+    "schema": [
+      0
+    ],
+    "monthly": [
+      0
+    ],
+    "simd": [
+      0
+    ],
+    "membership": [
+      0
+    ],
+    "hat": [
+      0
+    ],
+    "article": [
+      0
+    ],
+    "cheatsheet": [
+      0
+    ],
+    "tag": [
+      0
+    ],
+    "reference": [
+      0
+    ],
+    "unlock": [
+      0
+    ],
+    "learning_plan": [
+      0
+    ],
+    "free": [
+      0
+    ],
+    "crawl": [
+      0
+    ],
+    "c82fffdbc32e": [
+      0
+    ],
+    "improving": [
+      0
+    ],
+    "hashes": [
+      0
+    ],
+    "file": [
+      0
+    ],
+    "privacy": [
+      0
+    ],
+    "learning": [
+      0
+    ],
+    "series": [
+      0
+    ],
+    "mcp": [
+      0
+    ],
+    "chat": [
+      0
+    ],
+    "docker": [
+      0
+    ],
+    "quick": [
+      0
+    ],
+    "agnostic": [
+      0
+    ],
+    "models": [
+      0
+    ],
+    "stdlib": [
+      0
+    ],
+    "become": [
+      0
+    ],
+    "from": [
+      0
+    ],
+    "0046": [
+      0
+    ],
+    "beta": [
+      0
+    ],
+    "scraping": [
+      0
+    ],
+    "ads": [
+      0
+    ],
+    "send": [
+      0
+    ],
+    "and": [
+      0
+    ],
+    "langgraph_watermarked": [
+      0
+    ],
+    "c9ac81c58bcc": [
+      0
+    ],
+    "what": [
+      0
+    ],
+    "lists": [
+      0
+    ],
+    "698d61e0300d": [
+      0
+    ],
+    "operates": [
+      0
+    ],
+    "machine": [
+      0
+    ],
+    "video": [
+      0
+    ],
+    "led": [
+      0
+    ],
+    "imports": [
+      0
+    ],
+    "business": [
+      0
+    ],
+    "json": [
+      0
+    ],
+    "topics": [
+      0
+    ],
+    "waving": [
+      0
+    ],
+    "scientist": [
+      0
+    ],
+    "specific": [
+      0
+    ],
+    "candidate": [
+      0
+    ],
+    "thanks": [
+      0
+    ],
+    "contact": [
+      0
+    ],
+    "arranging": [
+      0
+    ],
+    "experts": [
+      0
+    ],
+    "office": [
+      0
+    ],
+    "worker": [
+      0
+    ],
+    "inc": [
+      0
+    ],
+    "unsubscribe": [
+      0
+    ],
+    "rack": [
+      0
+    ],
+    "browse": [
+      0
+    ],
+    "cabinet": [
+      0
+    ],
+    "start": [
+      0
+    ],
+    "latency": [
+      0
+    ],
+    "console": [
+      0
+    ],
+    "pricing": [
+      0
+    ],
+    "build": [
+      0
+    ],
+    "claude": [
+      0
+    ],
+    "inquiry": [
+      0
+    ],
+    "marked": [
+      0
+    ],
+    "d82e038c1c1c": [
+      0
+    ],
+    "plan": [
+      0
+    ],
+    "gets": [
+      0
+    ],
+    "sign": [
+      0
+    ],
+    "keys": [
+      0
+    ],
+    "inheritance": [
+      0
+    ],
+    "stacks": [
+      0
+    ],
+    "expert": [
+      0
+    ],
+    "use": [
+      0
+    ],
+    "content": [
+      0
+    ],
+    "loading": [
+      0
+    ],
+    "best": [
+      0
+    ],
+    "2542b35787ba": [
+      0
+    ],
+    "wooden": [
+      0
+    ],
+    "pythonistas": [
+      0
+    ],
+    "boxes": [
+      0
+    ],
+    "join": [
+      0
+    ],
+    "any": [
+      0
+    ],
+    "unlimited": [
+      0
+    ],
+    "spam": [
+      0
+    ],
+    "efficient": [
+      0
+    ],
+    "update": [
+      0
+    ],
+    "mixins_watermarked": [
+      0
+    ],
+    "tools": [
+      0
+    ],
+    "checklist": [
+      0
+    ],
+    "items": [
+      0
+    ],
+    "pythons": [
+      0
+    ],
+    "articles": [
+      0
+    ],
+    "algorithms": [
+      0
+    ],
+    "implement": [
+      0
+    ],
+    "kit": [
+      0
+    ],
+    "reject": [
+      0
+    ],
+    "queues": [
+      0
+    ],
+    "load": [
+      0
+    ],
+    "viz": [
+      0
+    ],
+    "modern": [
+      0
+    ],
+    "module": [
+      0
+    ],
+    "threaded": [
+      0
+    ],
+    "custom": [
+      0
+    ],
+    "file_watermarked": [
+      0
+    ],
+    "book": [
+      0
+    ],
+    "coding": [
+      0
+    ],
+    "filing": [
+      0
+    ],
+    "tool": [
+      0
+    ],
+    "svg": [
+      0
+    ],
+    "mixin": [
+      0
+    ],
+    "png": [
+      0
+    ],
+    "lens": [
+      0
+    ],
+    "verify": [
+      0
+    ],
+    "oriented": [
+      0
+    ],
+    "biggest": [
+      0
+    ],
+    "definitions": [
+      0
+    ],
+    "transform": [
+      0
+    ],
+    "imports_watermarked": [
+      0
+    ],
+    "sorting": [
+      0
+    ],
+    "2916c96a3049": [
+      0
+    ],
+    "navbar": [
+      0
+    ],
+    "holding": [
+      0
+    ],
+    "https": [
+      0
+    ],
+    "wearing": [
+      0
+    ],
+    "built": [
+      0
+    ],
+    "code_watermarked": [
+      0
+    ],
+    "skills": [
+      0
+    ],
+    "now": [
+      0
+    ],
+    "contributor": [
+      0
+    ],
+    "company": [
+      0
+    ],
+    "cards": [
+      0
+    ],
+    "editors": [
+      0
+    ],
+    "coat": [
+      0
+    ],
+    "dev": [
+      0
+    ],
+    "calls": [
+      0
+    ],
+    "wall": [
+      0
+    ],
+    "interface": [
+      0
+    ],
+    "applications": [
+      0
+    ],
+    "flow": [
+      0
+    ],
+    "tutorial": [
+      0
+    ],
+    "signup": [
+      0
+    ],
+    "area": [
+      0
+    ],
+    "rpp": [
+      0
+    ],
+    "stateful": [
+      0
+    ],
+    "natural": [
+      0
+    ],
+    "lab": [
+      0
+    ],
+    "python_watermarked": [
+      0
+    ],
+    "coordinating": [
+      0
+    ],
+    "merch": [
+      0
+    ],
+    "066fbf353cb4": [
+      0
+    ],
+    "737726d966fd": [
+      0
+    ],
+    "vault": [
+      0
+    ],
+    "learnrealpython": [
+      0
+    ],
+    "engineering_watermarked": [
+      0
+    ],
+    "pylock": [
+      0
+    ],
+    "opentelemetry": [
+      0
+    ],
+    "podcasts": [
+      0
+    ],
+    "serialization": [
+      0
+    ],
+    "realpython": [
+      0
+    ],
+    "terminal": [
+      0
+    ],
+    "packages": [
+      0
+    ],
+    "plans": [
+      0
+    ],
+    "842": [
+      0
+    ],
+    "shape": [
+      0
+    ],
+    "courses": [
+      0
+    ],
+    "resources": [
+      0
+    ],
+    "all": [
+      0
+    ],
+    "other": [
+      0
+    ],
+    "code": [
+      0
+    ],
+    "after": [
+      0
+    ],
+    "merge": [
+      0
+    ],
+    "python": [
+      0
+    ],
+    "live": [
+      0
+    ],
+    "reshape": [
+      0
+    ],
+    "new": [
+      0
+    ],
+    "the": [
+      0
+    ],
+    "prompt": [
+      0
+    ],
+    "security": [
+      0
+    ],
+    "end": [
+      0
+    ],
+    "teams": [
+      0
+    ],
+    "found": [
+      0
+    ],
+    "concise": [
+      0
+    ],
+    "out": [
+      0
+    ],
+    "available": [
+      0
+    ],
+    "offline": [
+      0
+    ],
+    "2026": [
+      0
+    ],
+    "traces": [
+      0
+    ],
+    "job": [
+      0
+    ],
+    "august": [
+      0
+    ],
+    "jul": [
+      0
+    ],
+    "radar": [
+      0
+    ],
+    "news_red_watermarked": [
+      0
+    ],
+    "performance": [
+      0
+    ],
+    "toml": [
+      0
+    ],
+    "meet": [
+      0
+    ],
+    "modules": [
+      0
+    ],
+    "a557daee0374": [
+      0
+    ],
+    "object": [
+      0
+    ],
+    "hours": [
+      0
+    ],
+    "support": [
+      0
+    ],
+    "dictionary": [
+      0
+    ],
+    "learner": [
+      0
+    ],
+    "designer": [
+      0
+    ],
+    "functions": [
+      0
+    ],
+    "faces": [
+      0
+    ],
+    "news": [
+      0
+    ],
+    "editorial": [
+      0
+    ],
+    "robot": [
+      0
+    ],
+    "validation": [
+      0
+    ],
+    "local": [
+      0
+    ],
+    "agent": [
+      0
+    ],
+    "get": [
+      0
+    ],
+    "tailored": [
+      0
+    ],
+    "hard": [
+      0
+    ],
+    "assisted": [
+      0
+    ],
+    "6435fda68bc4": [
+      0
+    ],
+    "modes": [
+      0
+    ],
+    "press": [
+      0
+    ],
+    "orm": [
+      0
+    ],
+    "sad": [
+      0
+    ],
+    "jpg": [
+      0
+    ],
+    "classes": [
+      0
+    ],
+    "create": [
+      0
+    ],
+    "your": [
+      0
+    ],
+    "chip": [
+      0
+    ],
+    "pass": [
+      0
+    ],
+    "practice": [
+      0
+    ],
+    "advanced": [
+      0
+    ],
+    "policy": [
+      0
+    ],
+    "exports": [
+      0
+    ],
+    "stories": [
+      0
+    ],
+    "books": [
+      0
+    ],
+    "career": [
+      0
+    ],
+    "user": [
+      0
+    ],
+    "language": [
+      0
+    ],
+    "emails": [
+      0
+    ],
+    "world": [
+      0
+    ],
+    "kneels": [
+      0
+    ],
+    "time": [
+      0
+    ],
+    "board": [
+      0
+    ],
+    "showcase": [
+      0
+    ],
+    "careers": [
+      0
+    ],
+    "stacked": [
+      0
+    ],
+    "crewai": [
+      0
+    ],
+    "workable": [
+      0
+    ],
+    "langgraph": [
+      0
+    ],
+    "app_watermarked": [
+      0
+    ],
+    "terms": [
+      0
+    ],
+    "designer_watermarked": [
+      0
+    ],
+    "says": [
+      0
+    ],
+    "stands": [
+      0
+    ],
+    "1cfef28a6113": [
+      0
+    ],
+    "893c30edea53": [
+      0
+    ],
+    "dba": [
+      0
+    ],
+    "points": [
+      0
+    ],
+    "guidelines": [
+      0
+    ],
+    "working": [
+      0
+    ],
+    "screen": [
+      0
+    ],
+    "round": [
+      0
+    ],
+    "extensible": [
+      0
+    ],
+    "datasets": [
+      0
+    ],
+    "gui": [
+      0
+    ],
+    "bug": [
+      0
+    ],
+    "meter": [
+      0
+    ],
+    "level": [
+      0
+    ],
+    "multiple": [
+      0
+    ],
+    "planned": [
+      0
+    ],
+    "headphones": [
+      0
+    ],
+    "assistance_watermarked": [
+      0
+    ],
+    "logo": [
+      0
+    ],
+    "debug": [
+      0
+    ],
+    "evaluate": [
+      0
+    ],
+    "reviews": [
+      0
+    ],
+    "guided": [
+      0
+    ]
+  },
+  "total_documents": 1,
+  "new_terms_history": [
+    516
+  ],
+  "crawl_order": [
+    "https://realpython.com/"
+  ],
+  "kb_embeddings": null,
+  "query_embeddings": null,
+  "expanded_queries": [],
+  "semantic_gaps": [],
+  "embedding_model": ""
+}

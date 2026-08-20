@@ -1,25 +1,79 @@
 
 from crawl4ai import *
-from crawl4ai.deep_crawling import BFSDeepCrawlStrategy
+from crawl4ai.deep_crawling import *
 from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
+from crawl4ai.deep_crawling.scorers import KeywordRelevanceScorer
+from typing import List
+from crawl4ai.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 class CrawlAgent:
-    async def deepCrawling(url: str) -> any:
-        config = CrawlerRunConfig(
-            deep_crawl_strategy=BFSDeepCrawlStrategy(
-                max_depth=2,
-                max_pages=20,
-                include_external=False
-            ),
-            scraping_strategy=LXMLWebScrapingStrategy(),
-            verbose=True
+    async def deepCrawling(url: str, keywordList: List[str]):
+
+        scorer = KeywordRelevanceScorer(
+            keywords= keywordList,
+            weight = 0.5
         )
 
-        async with AsyncWebCrawler() as crawler:
-            results = await crawler.arun(
+        config = CrawlerRunConfig(
+            deep_crawl_strategy=BestFirstCrawlingStrategy(
+                max_depth=2,
+                max_pages=20,
+                include_external=False,
+                # score_threshold=0.3,
+                url_scorer=scorer,
+                
+            ),
+            scraping_strategy=LXMLWebScrapingStrategy(),
+            verbose=True,
+            stream=True,
+            excluded_tags=["header", "footer"],
+            exclude_all_images=True,
+            only_text=True,
+            check_robots_txt=True,
+            remove_forms=True,
+            remove_consent_popups=True,
+            max_retries=3,
+            scan_full_page=True,
+            scroll_delay=2.0,
+            cache_mode=CacheMode.BYPASS,
+            
+
+        )
+
+        browser_config = BrowserConfig(
+            headless=False,
+            enable_stealth=True,
+            verbose=True,
+            avoid_ads=True,
+            avoid_css=True,
+            use_persistent_context=True
+        )
+        adapter = UndetectedAdapter()
+        strategy = AsyncPlaywrightCrawlerStrategy(
+            browser_config=browser_config,
+            browser_adapter=adapter,
+            
+        )
+
+        results=[]
+        async with AsyncWebCrawler(
+            crawler_strategy=strategy,
+            config=browser_config
+        ) as crawler:
+            # results = await crawler.arun(
+            #     url=url,
+            #     config=config
+            # )
+            async for result in await crawler.arun(
                 url=url,
-                config=config
-            )
+                config=config,
+                headers={"Accept-Language": "ko-KO,ko;q=0.9"}
+            ):
+                if not result.success and result.status_code == 403:
+                    print("Access denied by robots.txt")
+
+                # print(result.markdown, "\n\n\n\n\n*******************")
+                results+=result
 
             print(f"{len(results)} pages are crawled")
 
@@ -70,3 +124,36 @@ class CrawlAgent:
             #         f"Internal link to {link['href']}"
             #         f" with text {link['text']}"
             #         )
+
+    async def adaptiveCrawling(url: str, 
+                               query: str|None, 
+                               checkpoint: str|None="adaptive_crawl_progress.json",
+                               resume: bool = False):
+        async with AsyncWebCrawler() as crawler:
+            config = AdaptiveConfig(
+                confidence_threshold=0.9,
+                max_pages=50,
+                top_k_links=3,
+                min_gain_threshold=0.1,
+                save_state=True,
+                state_path=checkpoint,
+            )
+            adaptive = AdaptiveCrawler(crawler=crawler, config=config)
+
+            result = await adaptive.digest(
+                start_url=url,
+                query = query,
+                resume_from= checkpoint if resume else None
+            )
+
+            # print(result.save("./"))
+            if result.metrics.get("is_irrelevant", False):
+                print("query is unrelated to content")
+                return {"status": "query is unrelated to content"}
+
+            for doc in adaptive.get_relevant_content(top_k=5):
+                print(f"\n From: {doc['url']}")
+                print(f"\n Relevance: {doc['score']:.2%}")
+                print(doc['content'][:5000] + "...")
+                
+
