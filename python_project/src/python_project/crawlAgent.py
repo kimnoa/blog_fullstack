@@ -3,11 +3,11 @@ from crawl4ai import *
 from crawl4ai.deep_crawling import *
 from crawl4ai.content_scraping_strategy import LXMLWebScrapingStrategy
 from crawl4ai.deep_crawling.scorers import KeywordRelevanceScorer
-from typing import List
+from typing import *
 from crawl4ai.async_crawler_strategy import AsyncPlaywrightCrawlerStrategy
 
 class CrawlAgent:
-    async def deepCrawling(url: str, keywordList: List[str]):
+    async def deepCrawling(url: str, keywordList: List[str])->List[Any|CrawlResult]:
 
         scorer = KeywordRelevanceScorer(
             keywords= keywordList,
@@ -32,21 +32,39 @@ class CrawlAgent:
             check_robots_txt=True,
             remove_forms=True,
             remove_consent_popups=True,
-            max_retries=3,
+            max_retries=2,
             scan_full_page=True,
+            wait_for_images=True,
             scroll_delay=2.0,
             cache_mode=CacheMode.BYPASS,
-            
+            locale="ko-KO",
+            fetch_ssl_certificate=True,
+            exclude_domains=["*/account*,*/login*"],
+            proxy_config=[
+                ProxyConfig.DIRECT,
+                ProxyConfig(
+                    server="https://prox1.myblog.com:8080",
+                    username="jason",
+                    password="3xamp1e3",
+                ),
+                ProxyConfig(
+                    server="https://prox2.myblog.com:80",
+                    username="michael",
+                    password="!Passw0rd",
+                )
+            ]
 
         )
 
         browser_config = BrowserConfig(
-            headless=False,
+            headless=False, #headless = easily detected
             enable_stealth=True,
+            # browser_mode="builtin",
             verbose=True,
             avoid_ads=True,
             avoid_css=True,
-            use_persistent_context=True
+            use_persistent_context=True,
+            text_mode=True
         )
         adapter = UndetectedAdapter()
         strategy = AsyncPlaywrightCrawlerStrategy(
@@ -56,14 +74,13 @@ class CrawlAgent:
         )
 
         results=[]
+        fail_count=0
+        fail_url_list=[]
         async with AsyncWebCrawler(
             crawler_strategy=strategy,
             config=browser_config
         ) as crawler:
-            # results = await crawler.arun(
-            #     url=url,
-            #     config=config
-            # )
+
             async for result in await crawler.arun(
                 url=url,
                 config=config,
@@ -71,14 +88,17 @@ class CrawlAgent:
             ):
                 if not result.success and result.status_code == 403:
                     print("Access denied by robots.txt")
+                    fail_count+=1
+                    fail_url_list.append(result.url)
 
                 # print(result.markdown, "\n\n\n\n\n*******************")
                 results+=result
 
-            print(f"{len(results)} pages are crawled")
+            print(f"{len(results)} pages are crawled and {fail_count} pages are failed")
+            for u in fail_url_list:
+                print(u+"\n\n")
 
             return results
-
 
     async def crawler_agent(urlText:str):
 
